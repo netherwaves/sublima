@@ -47,11 +47,11 @@ void draw() {
     // draw objects
 
     // mouse update
+    // TODO: move in its own class instance
     PVector currMouse = new PVector(mouseX, mouseY);
     PVector displacement = PVector.sub(currMouse, cursorFollow).mult(0.05);
     cursorFollow.add(displacement);
     sendOSC("/mousetrail/vel", displacement.mag());
-
     fill(255, 0, 0);
     ellipse(cursorFollow.x, cursorFollow.y, 10, 10);
 }

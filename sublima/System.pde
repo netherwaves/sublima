@@ -1,8 +1,8 @@
 // TODO: combine with water states in MouseTrail.pde
-static class State {
-    public final int CLOSED = 0;
-    public final int OPEN = 1;
-}
+// static class State {
+//     public final int CLOSED = 0;
+//     public final int OPEN = 1;
+// }
 
 abstract class System {
     // props
@@ -12,7 +12,7 @@ abstract class System {
     // constructor
     System(String addr) {
         oscAddr = addr;
-        state = State.CLOSED;
+        // state = State.CLOSED;
     }
 
     // manage transitions

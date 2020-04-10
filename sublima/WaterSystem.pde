@@ -9,7 +9,10 @@ class WaterSystem extends System {
     WaterSystem() {
         super("/watersys");
 
-        for (int i = 0; i < NUM_SPINS; i++) spins.add(new WaterSpin(i));
+        spins = new ArrayList<WaterSpin>();
+        for (int i = 0; i < NUM_SPINS; i++) {
+            spins.add(new WaterSpin(i));
+        }
         oscOut = new String[3][spins.size()];
     }
 
@@ -17,9 +20,9 @@ class WaterSystem extends System {
     void display() {
         for (int i = 0; i < spins.size(); i++) {
             spins.get(i).animate();
-            oscOut[0][i] = String.format("%.5f", spins.get(i).getTheta());
-            oscOut[1][i] = String.format("%.5f", spins.get(i).getPan());
-            oscOut[2][i] = String.format("%.5f", spins.get(i).getVerticalMod());
+            oscOut[0][i] = formatFloat(spins.get(i).getTheta(), 5);
+            oscOut[1][i] = formatFloat(spins.get(i).getPan(), 5);
+            oscOut[2][i] = formatFloat(spins.get(i).getVerticalMod(), 5);
 
             spins.get(i).display();
         }
@@ -67,7 +70,7 @@ class WaterSpin {
     }
 
     // get theta value
-    float getTheta(boolean format) { return format ? String.format("%.5f", theta) : theta; }
-    float getPan(boolean format) { return format ? String.format("%.5f", map(pos.x, 0, width, -1, 1)) : map(pos.x, 0, width, -1, 1); }
-    float getVerticalMod(boolean format) { return format ? String.format("%.5f", map(pos.y, 0, height, 1, 0)) : map(pos.y, 0, height, 1, 0); }
+    float getTheta() { return theta; }
+    float getPan() { return map(pos.x, 0, width, -1, 1); }
+    float getVerticalMod() { return map(pos.y, 0, height, 1, 0); }
 }
