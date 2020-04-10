@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669210896,
+	"modificationdate" : 3669358867,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -31,7 +31,17 @@
 				"local" : 1
 			}
 ,
+			"water_spin~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"mixer.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"yafr2.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -50,16 +60,16 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
-,
-			"water_spin~.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
 
 		}
 ,
 		"data" : 		{
 			"storage.json" : 			{
+				"kind" : "json",
+				"local" : 1
+			}
+,
+			"scales.json" : 			{
 				"kind" : "json",
 				"local" : 1
 			}
