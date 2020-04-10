@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 403.0, 225.0, 987.0, 672.0 ],
+		"rect" : [ 643.0, 249.0, 873.0, 643.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,42 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 590.0, 149.0, 70.0, 22.0 ],
+					"text" : "loadmess 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 502.0, 253.0, 83.0, 22.0 ],
+					"text" : "prepend store"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 469.0, 253.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-22",
 					"maxclass" : "number",
 					"minimum" : 1,
@@ -46,7 +82,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 570.0, 253.0, 50.0, 22.0 ]
+					"patching_rect" : [ 590.0, 194.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -57,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 570.0, 287.0, 54.0, 22.0 ],
+					"patching_rect" : [ 590.0, 253.0, 54.0, 22.0 ],
 					"text" : "recall $1"
 				}
 
@@ -69,8 +105,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 516.0, 287.0, 52.0, 22.0 ],
-					"text" : "store $1"
+					"patching_rect" : [ 469.0, 291.0, 52.0, 22.0 ],
+					"text" : "store 1"
 				}
 
 			}
@@ -81,8 +117,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 889.0, 287.0, 34.0, 22.0 ],
-					"text" : "write"
+					"patching_rect" : [ 889.0, 287.0, 103.0, 22.0 ],
+					"text" : "write storage.json"
 				}
 
 			}
@@ -95,19 +131,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 854.0, 287.0, 33.0, 22.0 ],
 					"text" : "read"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "number",
-					"minimum" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 516.0, 253.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -137,6 +160,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "storage.json",
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -144,14 +168,14 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 670.0, 364.0, 73.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 10, 59, 650, 299 ],
+						"client_rect" : [ 100, 100, 500, 600 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 3, 216, 643, 456 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage",
-					"varname" : "u645000424"
+					"varname" : "u031000311"
 				}
 
 			}
@@ -161,7 +185,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 220.0, 65.0, 22.0 ],
+					"patching_rect" : [ 15.0, 353.0, 65.0, 22.0 ],
 					"text" : "plasmasys"
 				}
 
@@ -172,7 +196,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 196.0, 57.0, 22.0 ],
+					"patching_rect" : [ 15.0, 329.0, 57.0, 22.0 ],
 					"text" : "vaporsys"
 				}
 
@@ -183,7 +207,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 172.0, 42.0, 22.0 ],
+					"patching_rect" : [ 15.0, 305.0, 42.0, 22.0 ],
 					"text" : "icesys"
 				}
 
@@ -214,8 +238,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 148.0, 56.0, 22.0 ],
-					"text" : "watersys"
+					"patching_rect" : [ 15.0, 281.0, 56.0, 22.0 ],
+					"text" : "watersys",
+					"varname" : "watersys"
 				}
 
 			}
@@ -225,7 +250,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 91.0, 25.0, 22.0 ],
+					"patching_rect" : [ 15.0, 124.0, 25.0, 22.0 ],
 					"text" : "evt"
 				}
 
@@ -247,8 +272,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 43.0, 53.0, 22.0 ],
-					"text" : "oscsend"
+					"patching_rect" : [ 15.0, 43.0, 81.0, 22.0 ],
+					"text" : "osc_manager"
 				}
 
 			}
@@ -256,7 +281,14 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-13", 0 ]
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -276,6 +308,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -290,7 +329,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 1,
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
+					"order" : 0,
 					"source" : [ "obj-22", 0 ]
 				}
 
@@ -311,21 +359,162 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-2::obj-35" : [ "live.dial[1]", "live.dial[1]", 0 ],
-			"obj-4::obj-3" : [ "Water", "Water", 0 ],
-			"obj-4::obj-15" : [ "live.dial[3]", "live.dial[2]", 0 ],
-			"obj-4::obj-16" : [ "live.dial[4]", "live.dial[2]", 0 ],
-			"obj-4::obj-12" : [ "Master", "Master", 0 ],
-			"obj-4::obj-17" : [ "live.dial[5]", "live.dial[2]", 0 ],
-			"obj-2::obj-14" : [ "live.dial", "live.dial", 0 ],
-			"obj-4::obj-14" : [ "live.dial[2]", "live.dial[2]", 0 ],
+			"obj-2::obj-27.9::obj-23" : [ "live.dial[8]", "live.dial", 0 ],
+			"obj-4::obj-14" : [ "rvb_size", "Size", 0 ],
+			"obj-2::obj-27.3::obj-21" : [ "live.gain~[2]", "live.gain~", 0 ],
+			"obj-2::obj-27.5::obj-21" : [ "live.gain~[4]", "live.gain~", 0 ],
+			"obj-2::obj-35" : [ "ws_lfo", "Speed", 0 ],
+			"obj-2::obj-27.8::obj-23" : [ "live.dial[7]", "live.dial", 0 ],
+			"obj-4::obj-15" : [ "rvb_decay", "Decay", 0 ],
+			"obj-2::obj-27.10::obj-21" : [ "live.gain~[9]", "live.gain~", 0 ],
+			"obj-2::obj-27.4::obj-23" : [ "live.dial[3]", "live.dial", 0 ],
+			"obj-2::obj-27.6::obj-23" : [ "live.dial[5]", "live.dial", 0 ],
+			"obj-4::obj-12" : [ "master_gain", "Master", 0 ],
+			"obj-2::obj-27.9::obj-21" : [ "live.gain~[8]", "live.gain~", 0 ],
+			"obj-4::obj-3" : [ "water_vol", "Water", 0 ],
+			"obj-2::obj-27.2::obj-21" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-2::obj-27.5::obj-23" : [ "live.dial[4]", "live.dial", 0 ],
+			"obj-2::obj-27.7::obj-23" : [ "live.dial[6]", "live.dial", 0 ],
+			"obj-2::obj-82" : [ "ws_mousevol", "Mouse", 0 ],
+			"obj-4::obj-17" : [ "rvb_diff", "Diffusion", 0 ],
+			"obj-2::obj-27.10::obj-23" : [ "live.dial[9]", "live.dial", 0 ],
+			"obj-2::obj-27.1::obj-21" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-2::obj-27.3::obj-23" : [ "live.dial[2]", "live.dial", 0 ],
+			"obj-2::obj-27.6::obj-21" : [ "live.gain~[5]", "live.gain~", 0 ],
+			"obj-2::obj-14" : [ "ws_freq", "Freq", 0 ],
+			"obj-2::obj-27.8::obj-21" : [ "live.gain~[7]", "live.gain~", 0 ],
+			"obj-4::obj-16" : [ "rvb_damping", "Damping", 0 ],
+			"obj-2::obj-27.2::obj-23" : [ "live.dial[1]", "live.dial", 0 ],
+			"obj-2::obj-27.1::obj-23" : [ "live.dial", "live.dial", 0 ],
+			"obj-2::obj-27.4::obj-21" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-2::obj-27.7::obj-21" : [ "live.gain~[6]", "live.gain~", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-2::obj-27.9::obj-23" : 				{
+					"parameter_longname" : "live.dial[8]"
+				}
+,
+				"obj-4::obj-14" : 				{
+					"parameter_longname" : "rvb_size",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Size"
+				}
+,
+				"obj-2::obj-27.3::obj-21" : 				{
+					"parameter_longname" : "live.gain~[2]"
+				}
+,
+				"obj-2::obj-27.5::obj-21" : 				{
+					"parameter_longname" : "live.gain~[4]"
+				}
+,
+				"obj-2::obj-35" : 				{
+					"parameter_longname" : "ws_lfo",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Speed"
+				}
+,
+				"obj-2::obj-27.8::obj-23" : 				{
+					"parameter_longname" : "live.dial[7]"
+				}
+,
+				"obj-4::obj-15" : 				{
+					"parameter_longname" : "rvb_decay",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Decay"
+				}
+,
+				"obj-2::obj-27.10::obj-21" : 				{
+					"parameter_longname" : "live.gain~[9]"
+				}
+,
+				"obj-2::obj-27.4::obj-23" : 				{
+					"parameter_longname" : "live.dial[3]"
+				}
+,
+				"obj-2::obj-27.6::obj-23" : 				{
+					"parameter_longname" : "live.dial[5]"
+				}
+,
 				"obj-4::obj-12" : 				{
-					"parameter_longname" : "Master"
+					"parameter_longname" : "master_gain",
+					"parameter_linknames" : 1
+				}
+,
+				"obj-2::obj-27.9::obj-21" : 				{
+					"parameter_longname" : "live.gain~[8]"
+				}
+,
+				"obj-4::obj-3" : 				{
+					"parameter_longname" : "water_vol",
+					"parameter_linknames" : 1
+				}
+,
+				"obj-2::obj-27.2::obj-21" : 				{
+					"parameter_longname" : "live.gain~[1]"
+				}
+,
+				"obj-2::obj-27.5::obj-23" : 				{
+					"parameter_longname" : "live.dial[4]"
+				}
+,
+				"obj-2::obj-27.7::obj-23" : 				{
+					"parameter_longname" : "live.dial[6]"
+				}
+,
+				"obj-4::obj-17" : 				{
+					"parameter_longname" : "rvb_diff",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Diffusion"
+				}
+,
+				"obj-2::obj-27.10::obj-23" : 				{
+					"parameter_longname" : "live.dial[9]"
+				}
+,
+				"obj-2::obj-27.3::obj-23" : 				{
+					"parameter_longname" : "live.dial[2]"
+				}
+,
+				"obj-2::obj-27.6::obj-21" : 				{
+					"parameter_longname" : "live.gain~[5]"
+				}
+,
+				"obj-2::obj-14" : 				{
+					"parameter_longname" : "ws_freq",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Freq"
+				}
+,
+				"obj-2::obj-27.8::obj-21" : 				{
+					"parameter_longname" : "live.gain~[7]"
+				}
+,
+				"obj-4::obj-16" : 				{
+					"parameter_longname" : "rvb_damping",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Damping"
+				}
+,
+				"obj-2::obj-27.2::obj-23" : 				{
+					"parameter_longname" : "live.dial[1]"
+				}
+,
+				"obj-2::obj-27.1::obj-23" : 				{
+					"parameter_longname" : "live.dial",
+					"parameter_shortname" : "live.dial",
+					"parameter_unitstyle" : 8
+				}
+,
+				"obj-2::obj-27.4::obj-21" : 				{
+					"parameter_longname" : "live.gain~[3]"
+				}
+,
+				"obj-2::obj-27.7::obj-21" : 				{
+					"parameter_longname" : "live.gain~[6]"
 				}
 
 			}
@@ -333,29 +522,36 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "oscsend.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"name" : "osc_manager.maxpat",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "evt.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "watersys.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "water_spin~.maxpat",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mixer.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -368,22 +564,29 @@
 			}
 , 			{
 				"name" : "icesys.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "vaporsys.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "plasmasys.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/TP2_maxmsp/patchers",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "storage.json",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/data",
+				"patcherrelativepath" : "../data",
 				"type" : "JSON",
 				"implicit" : 1
 			}

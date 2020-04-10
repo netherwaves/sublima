@@ -17,19 +17,19 @@
         },
         "args": [
           "--force",
-          "--sketch=${workspaceRoot}",
-          "--output=${workspaceRoot}/out",
+          "--sketch=${workspaceRoot}/sublima",
+          "--output=${workspaceRoot}/sublima/out",
           "--run"
         ],
         "windows": {
           "args": [
             "--force",
             {
-              "value": "--sketch=${workspaceRoot}",
+              "value": "--sketch=${workspaceRoot}\\sublima",
               "quoting": "strong"
             },
             {
-              "value": "--output=${workspaceRoot}\\out",
+              "value": "--output=${workspaceRoot}\\sublima\\out",
               "quoting": "strong"
             },
             "--run"

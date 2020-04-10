@@ -1,8 +1,8 @@
 {
-	"name" : "TP2_maxmsp",
+	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669100349,
+	"modificationdate" : 3669210896,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -15,15 +15,15 @@
 				"local" : 1
 			}
 ,
-			"oscsend.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
 			"master.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+,
+			"osc_manager.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
 			}
 ,
 			"watersys.maxpat" : 			{
@@ -32,11 +32,6 @@
 			}
 ,
 			"mixer.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"storage.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -55,16 +50,29 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
+,
+			"water_spin~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+
+		}
+,
+		"data" : 		{
+			"storage.json" : 			{
+				"kind" : "json",
+				"local" : 1
+			}
 
 		}
 ,
 		"externals" : 		{
-			"OSC-route.mxe64" : 			{
+			"OpenSoundControl.mxe64" : 			{
 				"kind" : "object",
 				"local" : 1
 			}
 ,
-			"OpenSoundControl.mxe64" : 			{
+			"OSC-route.mxe64" : 			{
 				"kind" : "object",
 				"local" : 1
 			}

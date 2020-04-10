@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 538.0, 170.0, 992.0, 755.0 ],
+		"rect" : [ 1014.0, 190.0, 992.0, 755.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,18 +38,6 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 31.0, 113.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-18",
 					"maxclass" : "message",
@@ -100,11 +88,11 @@
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.0, 31.0, 104.0, 22.0 ],
-					"text" : "udpreceive 13000"
+					"patching_rect" : [ 122.0, 31.0, 36.0, 22.0 ],
+					"text" : "r udp"
 				}
 
 			}
@@ -133,26 +121,11 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"order" : 0,
 					"source" : [ "obj-3", 0 ]
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"order" : 1,
-					"source" : [ "obj-3", 0 ]
-				}
-
-			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "OSC-route.mxe64",
-				"type" : "mx64"
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }

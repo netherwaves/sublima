@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 433.0, 294.0, 1118.0, 607.0 ],
+		"rect" : [ 971.0, 275.0, 1118.0, 607.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -42,17 +42,20 @@
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 215.0, 88.0, 87.0, 22.0 ],
-					"restore" : [ -3.385826771653541 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 811.0, 262.0, 56.0, 22.0 ],
+					"restore" : 					{
+						"master_gain" : [ 0.0 ],
+						"rvb_damping" : [ 102.000000000000028 ],
+						"rvb_decay" : [ 56.999999999999979 ],
+						"rvb_diff" : [ 92.999999999999943 ],
+						"rvb_size" : [ 69.999999999999929 ],
+						"water_vol" : [ -4.840490299537308 ]
 					}
 ,
-					"text" : "pattr water_vol",
-					"varname" : "water_vol"
+					"text" : "autopattr",
+					"varname" : "u897000419"
 				}
 
 			}
@@ -67,15 +70,16 @@
 					"patching_rect" : [ 928.0, 26.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.dial[2]",
+							"parameter_longname" : "rvb_diff",
+							"parameter_shortname" : "Diffusion",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 0,
-							"parameter_longname" : "live.dial[5]"
+							"parameter_linknames" : 1
 						}
 
 					}
 ,
-					"varname" : "live.dial[3]"
+					"varname" : "rvb_diff"
 				}
 
 			}
@@ -90,15 +94,16 @@
 					"patching_rect" : [ 885.0, 26.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.dial[2]",
+							"parameter_longname" : "rvb_damping",
+							"parameter_shortname" : "Damping",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 0,
-							"parameter_longname" : "live.dial[4]"
+							"parameter_linknames" : 1
 						}
 
 					}
 ,
-					"varname" : "live.dial[2]"
+					"varname" : "rvb_damping"
 				}
 
 			}
@@ -113,15 +118,16 @@
 					"patching_rect" : [ 842.0, 26.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.dial[2]",
+							"parameter_longname" : "rvb_decay",
+							"parameter_shortname" : "Decay",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 0,
-							"parameter_longname" : "live.dial[3]"
+							"parameter_linknames" : 1
 						}
 
 					}
 ,
-					"varname" : "live.dial[1]"
+					"varname" : "rvb_decay"
 				}
 
 			}
@@ -136,15 +142,16 @@
 					"patching_rect" : [ 799.0, 26.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.dial[2]",
+							"parameter_longname" : "rvb_size",
+							"parameter_shortname" : "Size",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 0,
-							"parameter_longname" : "live.dial[2]"
+							"parameter_linknames" : 1
 						}
 
 					}
 ,
-					"varname" : "live.dial"
+					"varname" : "rvb_size"
 				}
 
 			}
@@ -184,17 +191,18 @@
 					"presentation_rect" : [ 215.0, 14.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "master_gain",
+							"parameter_mmax" : 6.0,
 							"parameter_shortname" : "Master",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "Master",
-							"parameter_mmax" : 6.0
+							"parameter_linknames" : 1,
+							"parameter_mmin" : -70.0
 						}
 
 					}
 ,
-					"varname" : "live.gain~[1]"
+					"varname" : "master_gain"
 				}
 
 			}
@@ -294,17 +302,18 @@
 					"presentation_rect" : [ 13.0, 14.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "water_vol",
+							"parameter_mmax" : 6.0,
 							"parameter_shortname" : "Water",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "Water",
-							"parameter_mmax" : 6.0
+							"parameter_linknames" : 1,
+							"parameter_mmin" : -70.0
 						}
 
 					}
 ,
-					"varname" : "live.gain~"
+					"varname" : "water_vol"
 				}
 
 			}
@@ -405,24 +414,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 224.5, 111.0, 168.0, 111.0, 168.0, 75.0, 117.5, 75.0 ],
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 1 ],
 					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"midpoints" : [ 132.0, 234.0, 201.0, 234.0, 201.0, 84.0, 224.5, 84.0 ],
-					"source" : [ "obj-3", 2 ]
 				}
 
 			}

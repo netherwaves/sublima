@@ -1,0 +1,39 @@
+{
+	"pattrstorage" : 	{
+		"name" : "u423000313",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"mixer::rvb_damping" : [ 83.000000000000071 ],
+					"mixer::rvb_decay" : [ 64.999999999999972 ],
+					"mixer::rvb_diff" : [ 92.999999999999943 ],
+					"mixer::rvb_size" : [ 87.999999999999901 ],
+					"mixer::water_vol" : [ -5.526747300917279 ],
+					"mixer::master_gain" : [ 0.0 ],
+					"watersys::ws_freq" : [ 795.514081106914318 ],
+					"watersys::ws_lfo" : [ 7.714055428110878 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"mixer::rvb_damping" : [ 73.999999999999957 ],
+					"mixer::rvb_decay" : [ 74.999999999999929 ],
+					"mixer::rvb_diff" : [ 73.999999999999957 ],
+					"mixer::rvb_size" : [ 91.999999999999886 ],
+					"mixer::water_vol" : [ -3.385826771653541 ],
+					"mixer::master_gain" : [ 0.0 ],
+					"watersys::ws_freq" : [  ],
+					"watersys::ws_lfo" : [  ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
