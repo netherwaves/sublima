@@ -1,19 +1,15 @@
 // global variables
 boolean isReady, allowAnimate;
-PVector cursorFollow;
 
 // objects
-WaterSystem watersys;
-IceSystem icesys;
-VaporSystem vaporsys;
+SystemManager manager;
+MouseTrail mouseTrail;
 
 void setup() {
-    size(1280, 720);
-
-    cursorFollow = new PVector(mouseX, mouseY);
+    size(1280, 720, P2D);
 
     // initialize graphics
-    isReady = false;
+    isReady = true;
     allowAnimate = true;
     loadingScreen();
 
@@ -21,16 +17,16 @@ void setup() {
     initOSC();
 
     // initialize systems
-    watersys = new WaterSystem();
-    icesys = new IceSystem();
-    vaporsys = new VaporSystem();
+    manager = new SystemManager();
+    manager.setPhase(PHASE_WATER);
+    mouseTrail = new MouseTrail();
 
     // plugg
-    oscP5.plug(this, "appReady", "/evt/max_ready");
+    // oscP5.plug(this, "appReady", "/evt/max_ready");
 
     // send ready signal
-    println("waiting for response from max/msp...");
-    sendOSC("/evt/p5_ready", 0);
+    // println("waiting for response from max/msp...");
+    // sendOSC("/evt/p5_ready", 0);
 }
 
 void draw() {
@@ -40,20 +36,17 @@ void draw() {
     }
 
     // feedback background fill
+    // TODO: remove :/
     noStroke();
     fill(0, 30);
-    rect(0,0,width,height);
+    rect(0, 0, width, height);
 
-    // draw objects
+    // display main
+    manager.display();
 
-    // mouse update
-    // TODO: move in its own class instance
-    PVector currMouse = new PVector(mouseX, mouseY);
-    PVector displacement = PVector.sub(currMouse, cursorFollow).mult(0.05);
-    cursorFollow.add(displacement);
-    sendOSC("/mousetrail/vel", displacement.mag());
-    fill(255, 0, 0);
-    ellipse(cursorFollow.x, cursorFollow.y, 10, 10);
+    // update mouse trail
+    mouseTrail.animate();
+    mouseTrail.display();
 }
 
 void loadingScreen() {
@@ -70,5 +63,11 @@ void appReady() {
 }
 
 void keyPressed() {
+    if (manager.isTransitioning()) return;
+
     // trigger transitions from here
+    if (key == 'c') manager.setPhase(PHASE_WATER);
+    if (key == 'v') manager.setPhase(PHASE_VAPOR);
+    if (key == 'b') manager.setPhase(PHASE_ICE);
+    // if (key == 'n') manager.setPhase(PHASE_PLASMA);
 }

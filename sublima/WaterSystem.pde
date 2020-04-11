@@ -18,13 +18,18 @@ class WaterSystem extends System {
 
     // draw to screen
     void display() {
+        rl.beginDraw();
+        rl.clear();
+        rl.noStroke();
+
+        // update and draw all spins
         for (int i = 0; i < spins.size(); i++) {
             spins.get(i).animate();
             oscOut[0][i] = formatFloat(spins.get(i).getTheta(), 5);
             oscOut[1][i] = formatFloat(spins.get(i).getPan(), 5);
             oscOut[2][i] = formatFloat(spins.get(i).getVerticalMod(), 5);
 
-            spins.get(i).display();
+            spins.get(i).display(rl);
         }
 
         // send OSC messages
@@ -33,6 +38,9 @@ class WaterSystem extends System {
             sendOSC(oscAddr + "/spin/pans", String.join(" ", oscOut[1]));
             sendOSC(oscAddr + "/spin/mods", String.join(" ", oscOut[2]));
         }
+
+        rl.endDraw();
+        super.display();
     }
 }
 
@@ -56,9 +64,9 @@ class WaterSpin {
     }
 
     // draw to screen
-    void display() {
-        fill(255, max(map(sin(theta), 0, 1, 0, 255), 0));
-        ellipse(
+    void display(PGraphics pg) {
+        pg.fill(255, max(map(sin(theta), 0, 1, 0, 255), 0));
+        pg.ellipse(
             pos.x + cos(theta) * orbTrajRadius,
             pos.y + sin(theta) * orbTrajRadius,
             orbSize, orbSize);

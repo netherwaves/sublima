@@ -13,6 +13,7 @@ void initOSC() {
 }
 
 // sends an OSC message
+// TODO: make this prettier
 void sendOSC(String addr, float content) {
     OscMessage msg = new OscMessage(addr);
     msg.add(content);
