@@ -10,9 +10,9 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 643.0, 249.0, 873.0, 643.0 ],
+		"rect" : [ 643.0, 249.0, 391.0, 301.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -39,12 +39,37 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 217.0, 325.0, 81.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 24.0, 214.0, 45.0, 20.0 ],
+					"text" : "Preset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 505.0, 294.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 149.0, 70.0, 22.0 ],
+					"patching_rect" : [ 338.0, 262.0, 70.0, 22.0 ],
 					"text" : "loadmess 1"
 				}
 
@@ -56,7 +81,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 502.0, 253.0, 83.0, 22.0 ],
+					"patching_rect" : [ 250.0, 354.0, 83.0, 22.0 ],
 					"text" : "prepend store"
 				}
 
@@ -69,7 +94,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 469.0, 253.0, 24.0, 24.0 ]
+					"patching_rect" : [ 217.0, 354.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 24.0, 237.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -82,7 +109,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 590.0, 194.0, 50.0, 22.0 ]
+					"patching_rect" : [ 338.0, 294.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 52.0, 238.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -93,7 +122,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 253.0, 54.0, 22.0 ],
+					"patching_rect" : [ 338.0, 354.0, 54.0, 22.0 ],
 					"text" : "recall $1"
 				}
 
@@ -105,7 +134,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 469.0, 291.0, 52.0, 22.0 ],
+					"patching_rect" : [ 217.0, 392.0, 52.0, 22.0 ],
 					"text" : "store 1"
 				}
 
@@ -117,7 +146,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 889.0, 287.0, 103.0, 22.0 ],
+					"patching_rect" : [ 505.0, 378.0, 103.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 252.0, 238.0, 103.0, 22.0 ],
 					"text" : "write storage.json"
 				}
 
@@ -129,8 +160,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 854.0, 287.0, 33.0, 22.0 ],
-					"text" : "read"
+					"patching_rect" : [ 505.0, 354.0, 101.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 252.0, 214.0, 101.0, 22.0 ],
+					"text" : "read storage.json"
 				}
 
 			}
@@ -141,7 +174,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 749.0, 287.0, 89.0, 22.0 ],
+					"patching_rect" : [ 402.0, 378.0, 89.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 149.0, 238.0, 89.0, 22.0 ],
 					"text" : "storagewindow"
 				}
 
@@ -153,7 +188,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 670.0, 287.0, 77.0, 22.0 ],
+					"patching_rect" : [ 402.0, 354.0, 77.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 149.0, 214.0, 77.0, 22.0 ],
 					"text" : "clientwindow"
 				}
 
@@ -166,7 +203,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 670.0, 364.0, 73.0, 22.0 ],
+					"patching_rect" : [ 402.0, 464.0, 73.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 100, 100, 500, 600 ],
 						"parameter_enable" : 0,
@@ -175,7 +212,7 @@
 					}
 ,
 					"text" : "pattrstorage",
-					"varname" : "u584000295"
+					"varname" : "u200000297"
 				}
 
 			}
@@ -227,6 +264,8 @@
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 216.0, 43.0, 274.0, 164.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 24.0, 26.0, 274.0, 164.0 ],
 					"varname" : "mixer",
 					"viewvisibility" : 1
 				}
@@ -282,6 +321,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
@@ -359,37 +405,37 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-2::obj-39::obj-35" : [ "ws_lfo", "Speed", 0 ],
 			"obj-2::obj-27.3::obj-23" : [ "live.dial[2]", "live.dial", 0 ],
-			"obj-4::obj-12" : [ "master_gain", "Master", 0 ],
+			"obj-2::obj-27.1::obj-23" : [ "live.dial", "live.dial", 0 ],
+			"obj-4::obj-16" : [ "rvb_damping", "Damping", 0 ],
 			"obj-4::obj-3" : [ "water_vol", "Water", 0 ],
 			"obj-2::obj-27.6::obj-21" : [ "live.gain~[5]", "live.gain~", 0 ],
 			"obj-2::obj-27.8::obj-23" : [ "live.dial[7]", "live.dial", 0 ],
-			"obj-2::obj-27.9::obj-21" : [ "live.gain~[19]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-35" : [ "ws_lfo", "Speed", 0 ],
 			"obj-2::obj-27.2::obj-23" : [ "live.dial[1]", "live.dial", 0 ],
-			"obj-2::obj-27.4::obj-21" : [ "live.gain~[3]", "live.gain~", 0 ],
-			"obj-4::obj-17" : [ "rvb_diff", "Diffusion", 0 ],
 			"obj-4::obj-20" : [ "ice_vol", "Ice", 0 ],
-			"obj-2::obj-27.10::obj-23" : [ "live.dial[18]", "live.dial", 0 ],
-			"obj-2::obj-27.7::obj-23" : [ "live.dial[6]", "live.dial", 0 ],
-			"obj-2::obj-27.9::obj-23" : [ "live.dial[19]", "live.dial", 0 ],
-			"obj-2::obj-39::obj-82" : [ "ws_mousevol", "Mouse", 0 ],
-			"obj-2::obj-27.3::obj-21" : [ "live.gain~[2]", "live.gain~", 0 ],
-			"obj-4::obj-16" : [ "rvb_damping", "Damping", 0 ],
-			"obj-2::obj-27.1::obj-21" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-2::obj-27.5::obj-21" : [ "live.gain~[4]", "live.gain~", 0 ],
-			"obj-2::obj-27.10::obj-21" : [ "live.gain~[18]", "live.gain~", 0 ],
-			"obj-2::obj-27.8::obj-21" : [ "live.gain~[7]", "live.gain~", 0 ],
-			"obj-2::obj-39::obj-14" : [ "ws_freq", "Freq", 0 ],
-			"obj-2::obj-27.1::obj-23" : [ "live.dial", "live.dial", 0 ],
 			"obj-2::obj-27.4::obj-23" : [ "live.dial[3]", "live.dial", 0 ],
-			"obj-4::obj-25" : [ "vapor_vol", "Vapor", 0 ],
 			"obj-4::obj-14" : [ "rvb_size", "Size", 0 ],
-			"obj-2::obj-27.6::obj-23" : [ "live.dial[5]", "live.dial", 0 ],
-			"obj-2::obj-27.2::obj-21" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-4::obj-15" : [ "rvb_decay", "Decay", 0 ],
-			"obj-2::obj-27.5::obj-23" : [ "live.dial[4]", "live.dial", 0 ],
 			"obj-2::obj-27.7::obj-21" : [ "live.gain~[6]", "live.gain~", 0 ],
+			"obj-2::obj-27.9::obj-21" : [ "live.gain~[19]", "live.gain~", 0 ],
+			"obj-2::obj-27.3::obj-21" : [ "live.gain~[2]", "live.gain~", 0 ],
+			"obj-4::obj-15" : [ "rvb_decay", "Decay", 0 ],
+			"obj-2::obj-27.5::obj-21" : [ "live.gain~[4]", "live.gain~", 0 ],
+			"obj-2::obj-27.1::obj-21" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-2::obj-27.8::obj-21" : [ "live.gain~[7]", "live.gain~", 0 ],
+			"obj-2::obj-27.10::obj-23" : [ "live.dial[18]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-82" : [ "ws_mousevol", "Mouse", 0 ],
+			"obj-4::obj-12" : [ "master_gain", "Master", 0 ],
+			"obj-2::obj-27.4::obj-21" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-4::obj-25" : [ "vapor_vol", "Vapor", 0 ],
+			"obj-2::obj-27.6::obj-23" : [ "live.dial[5]", "live.dial", 0 ],
+			"obj-2::obj-27.9::obj-23" : [ "live.dial[19]", "live.dial", 0 ],
+			"obj-2::obj-27.10::obj-21" : [ "live.gain~[18]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-14" : [ "ws_freq", "Freq", 0 ],
+			"obj-2::obj-27.2::obj-21" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-4::obj-17" : [ "rvb_diff", "Diffusion", 0 ],
+			"obj-2::obj-27.5::obj-23" : [ "live.dial[4]", "live.dial", 0 ],
+			"obj-2::obj-27.7::obj-23" : [ "live.dial[6]", "live.dial", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -399,9 +445,16 @@
 					"parameter_longname" : "live.dial[2]"
 				}
 ,
-				"obj-4::obj-12" : 				{
-					"parameter_longname" : "master_gain",
-					"parameter_linknames" : 1
+				"obj-2::obj-27.1::obj-23" : 				{
+					"parameter_longname" : "live.dial",
+					"parameter_shortname" : "live.dial",
+					"parameter_unitstyle" : 8
+				}
+,
+				"obj-4::obj-16" : 				{
+					"parameter_longname" : "rvb_damping",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Damping"
 				}
 ,
 				"obj-4::obj-3" : 				{
@@ -417,22 +470,8 @@
 					"parameter_longname" : "live.dial[7]"
 				}
 ,
-				"obj-2::obj-27.9::obj-21" : 				{
-					"parameter_longname" : "live.gain~[19]"
-				}
-,
 				"obj-2::obj-27.2::obj-23" : 				{
 					"parameter_longname" : "live.dial[1]"
-				}
-,
-				"obj-2::obj-27.4::obj-21" : 				{
-					"parameter_longname" : "live.gain~[3]"
-				}
-,
-				"obj-4::obj-17" : 				{
-					"parameter_longname" : "rvb_diff",
-					"parameter_linknames" : 1,
-					"parameter_shortname" : "Diffusion"
 				}
 ,
 				"obj-4::obj-20" : 				{
@@ -441,57 +480,8 @@
 					"parameter_linknames" : 1
 				}
 ,
-				"obj-2::obj-27.10::obj-23" : 				{
-					"parameter_longname" : "live.dial[18]"
-				}
-,
-				"obj-2::obj-27.7::obj-23" : 				{
-					"parameter_longname" : "live.dial[6]"
-				}
-,
-				"obj-2::obj-27.9::obj-23" : 				{
-					"parameter_longname" : "live.dial[19]"
-				}
-,
-				"obj-2::obj-27.3::obj-21" : 				{
-					"parameter_longname" : "live.gain~[2]"
-				}
-,
-				"obj-4::obj-16" : 				{
-					"parameter_longname" : "rvb_damping",
-					"parameter_linknames" : 1,
-					"parameter_shortname" : "Damping"
-				}
-,
-				"obj-2::obj-27.1::obj-21" : 				{
-					"parameter_longname" : "live.gain~"
-				}
-,
-				"obj-2::obj-27.5::obj-21" : 				{
-					"parameter_longname" : "live.gain~[4]"
-				}
-,
-				"obj-2::obj-27.10::obj-21" : 				{
-					"parameter_longname" : "live.gain~[18]"
-				}
-,
-				"obj-2::obj-27.8::obj-21" : 				{
-					"parameter_longname" : "live.gain~[7]"
-				}
-,
-				"obj-2::obj-27.1::obj-23" : 				{
-					"parameter_longname" : "live.dial",
-					"parameter_shortname" : "live.dial",
-					"parameter_unitstyle" : 8
-				}
-,
 				"obj-2::obj-27.4::obj-23" : 				{
 					"parameter_longname" : "live.dial[3]"
-				}
-,
-				"obj-4::obj-25" : 				{
-					"parameter_longname" : "vapor_vol",
-					"parameter_shortname" : "Vapor"
 				}
 ,
 				"obj-4::obj-14" : 				{
@@ -500,12 +490,16 @@
 					"parameter_shortname" : "Size"
 				}
 ,
-				"obj-2::obj-27.6::obj-23" : 				{
-					"parameter_longname" : "live.dial[5]"
+				"obj-2::obj-27.7::obj-21" : 				{
+					"parameter_longname" : "live.gain~[6]"
 				}
 ,
-				"obj-2::obj-27.2::obj-21" : 				{
-					"parameter_longname" : "live.gain~[1]"
+				"obj-2::obj-27.9::obj-21" : 				{
+					"parameter_longname" : "live.gain~[19]"
+				}
+,
+				"obj-2::obj-27.3::obj-21" : 				{
+					"parameter_longname" : "live.gain~[2]"
 				}
 ,
 				"obj-4::obj-15" : 				{
@@ -514,12 +508,64 @@
 					"parameter_shortname" : "Decay"
 				}
 ,
+				"obj-2::obj-27.5::obj-21" : 				{
+					"parameter_longname" : "live.gain~[4]"
+				}
+,
+				"obj-2::obj-27.1::obj-21" : 				{
+					"parameter_longname" : "live.gain~"
+				}
+,
+				"obj-2::obj-27.8::obj-21" : 				{
+					"parameter_longname" : "live.gain~[7]"
+				}
+,
+				"obj-2::obj-27.10::obj-23" : 				{
+					"parameter_longname" : "live.dial[18]"
+				}
+,
+				"obj-4::obj-12" : 				{
+					"parameter_longname" : "master_gain",
+					"parameter_linknames" : 1
+				}
+,
+				"obj-2::obj-27.4::obj-21" : 				{
+					"parameter_longname" : "live.gain~[3]"
+				}
+,
+				"obj-4::obj-25" : 				{
+					"parameter_longname" : "vapor_vol",
+					"parameter_shortname" : "Vapor"
+				}
+,
+				"obj-2::obj-27.6::obj-23" : 				{
+					"parameter_longname" : "live.dial[5]"
+				}
+,
+				"obj-2::obj-27.9::obj-23" : 				{
+					"parameter_longname" : "live.dial[19]"
+				}
+,
+				"obj-2::obj-27.10::obj-21" : 				{
+					"parameter_longname" : "live.gain~[18]"
+				}
+,
+				"obj-2::obj-27.2::obj-21" : 				{
+					"parameter_longname" : "live.gain~[1]"
+				}
+,
+				"obj-4::obj-17" : 				{
+					"parameter_longname" : "rvb_diff",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Diffusion"
+				}
+,
 				"obj-2::obj-27.5::obj-23" : 				{
 					"parameter_longname" : "live.dial[4]"
 				}
 ,
-				"obj-2::obj-27.7::obj-21" : 				{
-					"parameter_longname" : "live.gain~[6]"
+				"obj-2::obj-27.7::obj-23" : 				{
+					"parameter_longname" : "live.dial[6]"
 				}
 
 			}

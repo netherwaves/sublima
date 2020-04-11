@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 309.0, 85.0, 614.0, 619.0 ],
+		"rect" : [ 223.0, 149.0, 614.0, 619.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -372,7 +372,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 969.0, 212.0, 640.0, 693.0 ],
+						"rect" : [ 977.0, 240.0, 640.0, 693.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -449,13 +449,13 @@
 									"patching_rect" : [ 181.0, 486.0, 48.0, 136.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 6.0,
 											"parameter_shortname" : "Mouse",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "ws_mousevol",
-											"parameter_mmax" : 6.0
+											"parameter_longname" : "ws_mousevol"
 										}
 
 									}
@@ -515,7 +515,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u773000514"
+									"varname" : "u629000596"
 								}
 
 							}
@@ -566,14 +566,14 @@
 									"patching_rect" : [ 387.0, 152.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 30.0,
 											"parameter_shortname" : "Speed",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 1,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : 4.0,
 											"parameter_exponent" : 2.0,
-											"parameter_longname" : "ws_lfo",
-											"parameter_mmax" : 30.0
+											"parameter_longname" : "ws_lfo"
 										}
 
 									}
@@ -692,14 +692,14 @@
 									"patching_rect" : [ 181.0, 37.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
+											"parameter_mmax" : 20000.0,
 											"parameter_shortname" : "Freq",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 3,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : 20.0,
 											"parameter_exponent" : 3.0,
-											"parameter_longname" : "ws_freq",
-											"parameter_mmax" : 20000.0
+											"parameter_longname" : "ws_freq"
 										}
 
 									}

@@ -1,18 +1,21 @@
 {
 	"pattrstorage" : 	{
-		"name" : "u423000313",
+		"name" : "u200000297",
 		"slots" : 		{
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
-					"mixer::rvb_damping" : [ 83.000000000000071 ],
-					"mixer::rvb_decay" : [ 64.999999999999972 ],
-					"mixer::rvb_diff" : [ 92.999999999999943 ],
-					"mixer::rvb_size" : [ 87.999999999999901 ],
-					"mixer::water_vol" : [ -5.526747300917279 ],
+					"watersys::watermouse::ws_freq" : [ 2233.980676465327178 ],
+					"watersys::watermouse::ws_lfo" : [ 5.974703949407893 ],
+					"watersys::watermouse::ws_mousevol" : [ -70.0 ],
+					"mixer::ice_vol" : [ -5.779527559055111 ],
 					"mixer::master_gain" : [ 0.0 ],
-					"watersys::ws_freq" : [ 795.514081106914318 ],
-					"watersys::ws_lfo" : [ 7.714055428110878 ]
+					"mixer::rvb_damping" : [ 102.000000000000028 ],
+					"mixer::rvb_decay" : [ 56.999999999999979 ],
+					"mixer::rvb_diff" : [ 92.999999999999943 ],
+					"mixer::rvb_size" : [ 69.999999999999929 ],
+					"mixer::vapor_vol" : [ -5.385826771653541 ],
+					"mixer::water_vol" : [ -4.840490299537308 ]
 				}
 
 			}
@@ -20,14 +23,17 @@
 			"2" : 			{
 				"id" : 2,
 				"data" : 				{
+					"watersys::watermouse::ws_freq" : [  ],
+					"watersys::watermouse::ws_lfo" : [  ],
+					"watersys::watermouse::ws_mousevol" : [  ],
+					"mixer::ice_vol" : [  ],
+					"mixer::master_gain" : [ 0.0 ],
 					"mixer::rvb_damping" : [ 73.999999999999957 ],
 					"mixer::rvb_decay" : [ 74.999999999999929 ],
 					"mixer::rvb_diff" : [ 73.999999999999957 ],
 					"mixer::rvb_size" : [ 91.999999999999886 ],
-					"mixer::water_vol" : [ -3.385826771653541 ],
-					"mixer::master_gain" : [ 0.0 ],
-					"watersys::ws_freq" : [  ],
-					"watersys::ws_lfo" : [  ]
+					"mixer::vapor_vol" : [  ],
+					"mixer::water_vol" : [ -3.385826771653541 ]
 				}
 
 			}
