@@ -1,10 +1,13 @@
 // Mouse trail
 class MouseTrail {
+    // props
     int phase;
     PVector pos, displace;
     float vel;
     int particleThreshold;
 
+    // objects
+    RenderLayer rl;
     ArrayList<WaterParticle> particles;
 
     // constructor
@@ -16,13 +19,14 @@ class MouseTrail {
         vel = 0;
         particleThreshold = 20;
 
+        rl = new RenderLayer(0.93);
         particles = new ArrayList<WaterParticle>();
     }
 
     // draw to screen
     void display() {
-        fill(255, 0, 0);
-        ellipse(pos.x, pos.y, 10, 10);
+        rl.beginDraw();
+        PGraphics pg = rl.getGraphics();
 
         // create new water particle
         float instanciate = random(vel);
@@ -39,9 +43,15 @@ class MouseTrail {
                 particles.remove(i);
                 continue;
             } else {
-                p.display();
+                p.display(pg);
             }
         }
+
+        rl.endDraw();
+        rl.render();
+
+        fill(255, 0, 0);
+        ellipse(pos.x, pos.y, 10, 10);
     }
 
     // update animation variabless
@@ -106,9 +116,9 @@ class WaterParticle {
         }
     }
 
-    void display() {
-        fill(fillColor, opacity);
-        ellipse(pos.x, pos.y, 4, 4);
+    void display(PGraphics pg) {
+        pg.fill(fillColor, opacity);
+        pg.ellipse(pos.x, pos.y, 4, 4);
     }
 
     boolean isDead() {

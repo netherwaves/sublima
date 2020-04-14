@@ -4,15 +4,14 @@ class VaporSystem extends System {
     }
 
     void display() {
-        rlMain.beginDraw();
-        rlMain.clear();
-        rlMain.noStroke();
+        rl.beginDraw();
+        PGraphics pg = rl.getGraphics();
 
         // just draw a rectangle bro :/
-        rlMain.fill(#8b4f55);
-        rlMain.rect(40, 40, 40, 40);
+        pg.fill(#8b4f55);
+        pg.rect(40, 40, 40, 40);
 
-        rlMain.endDraw();
+        rl.endDraw();
         super.display();
     }
 }
