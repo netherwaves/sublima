@@ -1,6 +1,10 @@
 # GENERAL
 Integrate smooth transitions between phases (MAX/MSP compliant)
-Selective feedback system (use PGraphics recursion)
+[x] Selective feedback system (use PGraphics recursion)
+
+# MOUSE TRAIL
+Exclusive eedback effect on (certain?) mouse trail visual components
+WATER - Add shader to water particles
 
 # WATER SYSTEM
 [x] Spread water spins to stereo field
