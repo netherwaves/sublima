@@ -1,10 +1,11 @@
 # GENERAL
 Integrate smooth transitions between phases (MAX/MSP compliant)
+Selective feedback system (use PGraphics recursion)
 
 # WATER SYSTEM
 [x] Spread water spins to stereo field
 Adapt visuals to art direction
-Create mouse trail graphics
+[x] Create mouse trail graphics
 
 # VAPOR SYSTEM
 asdf
