@@ -2,14 +2,20 @@ abstract class System {
     // props
     String oscAddr;
     int state;
-    PGraphics rl; // short for "render layer"
+    PGraphics rlMain, rlSub; // rl is short for "render layer"
 
     // constructor
     System(String addr) {
         oscAddr = addr;
         state = STATE_HIDDEN;
 
-        rl = createGraphics(width, height);
+        rlMain = createGraphics(width, height);
+        rlSub = createGraphics(width, height);
+
+        // IMPORTANT:
+        // this is so that rlSub already has pixel data when transferred to from rlMain
+        rlSub.beginDraw();
+        rlSub.endDraw();
     }
 
     // display/animate
@@ -17,7 +23,15 @@ abstract class System {
         // empty by default
     }
     void display() {
-        image(rl, 0, 0);
+        image(rlMain, 0, 0);
+        rlSub = copyGraphics(rlMain, rlSub);
+    }
+
+    // render feedback layer to main layer
+    void displaySub(float feedback) {
+        rlMain.tint(255, 255 * feedback);
+        rlMain.image(rlSub, 0, 0);
+        rlMain.tint(255, 255);
     }
 
     // manage transitions

@@ -4,6 +4,7 @@ class WaterSystem extends System {
     // props
     ArrayList<WaterSpin> spins;
     String[][] oscOut;
+    float feedbackCoeff;
 
     // constructor
     WaterSystem() {
@@ -14,13 +15,17 @@ class WaterSystem extends System {
             spins.add(new WaterSpin(i));
         }
         oscOut = new String[3][spins.size()];
+
+        feedbackCoeff = 0.9;
     }
 
     // draw to screen
     void display() {
-        rl.beginDraw();
-        rl.clear();
-        rl.noStroke();
+        rlMain.beginDraw();
+        rlMain.clear();
+        rlMain.noStroke();
+
+        super.displaySub(feedbackCoeff);
 
         // update and draw all spins
         for (int i = 0; i < spins.size(); i++) {
@@ -29,7 +34,7 @@ class WaterSystem extends System {
             oscOut[1][i] = formatFloat(spins.get(i).getPan(), 5);
             oscOut[2][i] = formatFloat(spins.get(i).getVerticalMod(), 5);
 
-            spins.get(i).display(rl);
+            spins.get(i).display(rlMain);
         }
 
         // send OSC messages
@@ -39,7 +44,7 @@ class WaterSystem extends System {
             sendOSC(oscAddr + "/spin/mods", String.join(" ", oscOut[2]));
         }
 
-        rl.endDraw();
+        rlMain.endDraw();
         super.display();
     }
 }

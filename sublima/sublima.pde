@@ -25,16 +25,17 @@ void setup() {
 }
 
 void draw() {
+    background(0);
+    noStroke();
+
+    // loading screen
     if (!isReady) {
         loadingScreen();
         return;
     }
 
-    // feedback background fill
-    // TODO: remove :/
-    noStroke();
-    fill(0, 30);
-    rect(0, 0, width, height);
+    // TODO: intro screen ???
+    // will probably be a System subclass
 
     // display main
     manager.display();

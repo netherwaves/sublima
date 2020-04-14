@@ -4,15 +4,15 @@ class IceSystem extends System {
     }
 
     void display() {
-        rl.beginDraw();
-        rl.clear();
-        rl.noStroke();
+        rlMain.beginDraw();
+        rlMain.clear();
+        rlMain.noStroke();
 
         // draw a rectangle but it'S NOT THE SAME ONE AS VAPORSYS!!! NO SIR
-        rl.fill(0, 255, 127);
-        rl.rect(500, 500, 100 + ((float)SimplexNoise.noise(frameCount, 0) * 30), 400);
+        rlMain.fill(0, 255, 127);
+        rlMain.rect(500, 500, 100 + ((float)SimplexNoise.noise(frameCount, 0) * 30), 400);
 
-        rl.endDraw();
+        rlMain.endDraw();
         super.display();
     }
 }

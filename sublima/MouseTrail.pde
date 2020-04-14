@@ -122,7 +122,7 @@ class IceParticle {
     }
 }
 
-class VaporParticle() {
+class VaporParticle {
     VaporParticle() {
 
     }
