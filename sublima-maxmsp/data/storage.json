@@ -1,6 +1,6 @@
 {
 	"pattrstorage" : 	{
-		"name" : "u200000297",
+		"name" : "u622000296",
 		"slots" : 		{
 			"1" : 			{
 				"id" : 1,
@@ -15,7 +15,9 @@
 					"mixer::rvb_diff" : [ 92.999999999999943 ],
 					"mixer::rvb_size" : [ 69.999999999999929 ],
 					"mixer::vapor_vol" : [ -5.385826771653541 ],
-					"mixer::water_vol" : [ -4.840490299537308 ]
+					"mixer::water_vol" : [ -5.562139784073395 ],
+					"mixer::evt_vol" : [ -4.582677165354326 ],
+					"mixer::idle_vol" : [ -5.779527559055111 ]
 				}
 
 			}
@@ -33,7 +35,9 @@
 					"mixer::rvb_diff" : [ 73.999999999999957 ],
 					"mixer::rvb_size" : [ 91.999999999999886 ],
 					"mixer::vapor_vol" : [  ],
-					"mixer::water_vol" : [ -3.385826771653541 ]
+					"mixer::water_vol" : [ -3.385826771653541 ],
+					"mixer::evt_vol" : [  ],
+					"mixer::idle_vol" : [  ]
 				}
 
 			}
