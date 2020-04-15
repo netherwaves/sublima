@@ -8,7 +8,7 @@ class MouseTrail {
 
     // objects
     RenderLayer rl;
-    ArrayList<WaterParticle> particles;
+    ArrayList<Particle> particles;
 
     // constructor
     MouseTrail() {
@@ -20,7 +20,7 @@ class MouseTrail {
         particleThreshold = 20;
 
         rl = new RenderLayer(0.93);
-        particles = new ArrayList<WaterParticle>();
+        particles = new ArrayList<Particle>();
     }
 
     // draw to screen
@@ -36,7 +36,7 @@ class MouseTrail {
 
         // update particles
         for (int i = 0; i < particles.size(); i++) {
-            WaterParticle p = particles.get(i);
+            Particle p = particles.get(i);
             p.update();
 
             if (p.isDead()) {
@@ -76,30 +76,44 @@ class MouseTrail {
 }
 
 
-class WaterParticle {
+abstract class Particle {
+    PVector pos;
+    float startTime, lifespan;
+
+    Particle(PVector _pos, float _lifespan) {
+        pos = _pos.copy();
+        startTime = frameCount;
+        lifespan = _lifespan;
+    }
+
+    // draw to screen
+    void update() {}
+    void display(PGraphics pg) {}
+
+    boolean isDead() {
+        return frameCount > startTime + lifespan;
+    }
+}
+
+
+class WaterParticle extends Particle {
     // props
-    PVector pos, dir;
-    float initVel, vel;
-    float opacity;
+    PVector dir;
+    float vel, opacity;
     color fillColor;
-    float lifespan;
 
     WaterParticle(PVector _pos, PVector _dir, float _vel) {
-        pos = _pos.copy();
+        super(_pos, random(frameRate, frameRate * 2));
         dir = _dir.copy().normalize();
+        vel = _vel;
+
         // rotate direction vector by random theta
         float theta = random(-QUARTER_PI, QUARTER_PI);
         dir.rotate(theta);
 
-        // initialize dynamic data
-        initVel = _vel;
-        vel = initVel;
-        opacity = 255;
-        lifespan = random(0.6, 1.3);
-
         // create random color (tint of cyan / blue)
         colorMode(HSB, 360, 100, 100);
-        fillColor = color(random(160, 220), random(60, 80), random(50, 80));
+        fillColor = color(random(150, 230), random(60, 80), random(50, 80));
         colorMode(RGB, 255, 255, 255);
     }
 
@@ -110,30 +124,29 @@ class WaterParticle {
         vel = max(0, vel);
         pos.add(PVector.mult(dir, vel));
 
-        if (vel < initVel/3) {
-            opacity -= 10;
-            opacity = max(0, opacity);
-        }
+        opacity = constrain(map(frameCount - startTime, 0, lifespan, 2.3, 0), 0, 1) * 255;
     }
 
     void display(PGraphics pg) {
         pg.fill(fillColor, opacity);
         pg.ellipse(pos.x, pos.y, 4, 4);
     }
-
-    boolean isDead() {
-        return opacity == 0;
-    }
 }
 
-class IceParticle {
-    IceParticle() {
-
+class IceParticle extends Particle {
+    IceParticle(PVector _pos) {
+        super(_pos, random(frameRate, frameRate * 2));
     }
+
+    void update() {}
+    void display(PGraphics pg) {}
 }
 
-class VaporParticle {
-    VaporParticle() {
-
+class VaporParticle extends Particle {
+    VaporParticle(PVector _pos) {
+        super(_pos, random(frameRate, frameRate * 2));
     }
+
+    void update() {}
+    void display(PGraphics pg) {}
 }
