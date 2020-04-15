@@ -4,7 +4,7 @@ class MouseTrail {
     int phase;
     PVector pos, displace;
     float vel;
-    int particleThreshold;
+    int wpThreshold;
 
     // objects
     RenderLayer rl;
@@ -17,7 +17,8 @@ class MouseTrail {
         pos = new PVector(mouseX, mouseY);
         displace = new PVector(0, 0);
         vel = 0;
-        particleThreshold = 20;
+
+        wpThreshold = 20;
 
         rl = new RenderLayer(0.93);
         particles = new ArrayList<Particle>();
@@ -28,10 +29,11 @@ class MouseTrail {
         rl.beginDraw();
         PGraphics pg = rl.getGraphics();
 
-        // create new water particle
-        float instanciate = random(vel);
-        if (instanciate > particleThreshold) {
-            particles.add(new WaterParticle(pos, displace, vel*0.1));
+        // generate corresponding particle type
+        switch (phase) {
+            case PHASE_WATER: createWaterParticle(); break;
+            case PHASE_VAPOR: createVaporParticle(); break;
+            case PHASE_ICE:   createIceParticle();   break;
         }
 
         // update particles
@@ -52,6 +54,25 @@ class MouseTrail {
 
         fill(255, 0, 0);
         ellipse(pos.x, pos.y, 10, 10);
+    }
+
+    // manages water particle generation logic
+    void createWaterParticle() {
+        // instanciate randomly depending on intensity of mouse velocity
+        float instanciate = random(vel);
+        if (instanciate > wpThreshold) {
+            particles.add(new WaterParticle(pos, displace, vel*0.1));
+        }
+    }
+
+    // manages vapor particle generation logic
+    void createVaporParticle() {
+
+    }
+
+    // manages ice particle generation logic
+    void createIceParticle() {
+
     }
 
     // update animation variabless
@@ -94,7 +115,6 @@ abstract class Particle {
         return frameCount > startTime + lifespan;
     }
 }
-
 
 class WaterParticle extends Particle {
     // props

@@ -43,6 +43,9 @@ void draw() {
     // update mouse trail
     mouseTrail.animate();
     mouseTrail.display();
+
+    // draw GUI (debugging purposes)
+    drawGUI();
 }
 
 void loadingScreen() {
@@ -63,9 +66,11 @@ void keyPressed() {
     // if (key == 'n') changePhase(PHASE_PLASMA);
 }
 
-void changePhase(int newPhase) {
-    manager.setPhase(newPhase);
-    mouseTrail.setPhase(newPhase);
+void drawGUI() {
+    String[] phases = { "PHASE_IDLE", "PHASE_WATER", "PHASE_VAPOR", "PHASE_ICE" };
 
-    sendOSC("/evt/change_phase", newPhase);
+    fill(255);
+    textAlign(LEFT);
+    text("fps: " + (int)frameRate, 10, 20);
+    text("phase: " + phases[manager.getPhase()], 10, 35);
 }
