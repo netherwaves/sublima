@@ -35,6 +35,81 @@
             "--run"
           ]
         }
+      },
+      {
+        "label": "Export App (Windows)",
+        "type": "shell",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "command": "${config:processing.path}",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated"
+        },
+        "args": [
+          "--force",
+          "--sketch=${workspaceRoot}/sublima",
+          "--output=${workspaceRoot}/export/application.windows",
+          "--platform=windows",
+          "--export"
+        ],
+        "windows": {
+          "args": [
+            "--force",
+            {
+              "value": "--sketch=${workspaceRoot}\\sublima",
+              "quoting": "strong"
+            },
+            {
+              "value": "--output=${workspaceRoot}\\export\\application.windows",
+              "quoting": "strong"
+            },
+            "--platform=windows",
+            "--export"
+          ]
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Export App (OS X)",
+        "type": "shell",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "command": "${config:processing.path}",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated"
+        },
+        "args": [
+          "--force",
+          "--sketch=${workspaceRoot}/sublima",
+          "--output=${workspaceRoot}/export/application.macosx",
+          "--platform=macosx",
+          "--export"
+        ],
+        "windows": {
+          "args": [
+            "--force",
+            {
+              "value": "--sketch=${workspaceRoot}\\sublima",
+              "quoting": "strong"
+            },
+            {
+              "value": "--output=${workspaceRoot}\\export\\application.macosx",
+              "quoting": "strong"
+            },
+            "--platform=macosx",
+            "--export"
+          ]
+        }
       }
     ]
   }
