@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669358867,
+	"modificationdate" : 3669739288,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -22,6 +22,11 @@
 			}
 ,
 			"osc_manager.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"thru.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -64,6 +69,11 @@
 		}
 ,
 		"data" : 		{
+			"states.txt" : 			{
+				"kind" : "textfile",
+				"local" : 1
+			}
+,
 			"storage.json" : 			{
 				"kind" : "json",
 				"local" : 1

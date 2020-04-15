@@ -66,4 +66,6 @@ void keyPressed() {
 void changePhase(int newPhase) {
     manager.setPhase(newPhase);
     mouseTrail.setPhase(newPhase);
+
+    sendOSC("/evt/change_phase", newPhase);
 }

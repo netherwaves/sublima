@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 529.0, 134.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -399,7 +411,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -449,13 +460,13 @@
 									"patching_rect" : [ 181.0, 486.0, 48.0, 136.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_mmax" : 6.0,
-											"parameter_shortname" : "Mouse",
-											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : -70.0,
-											"parameter_longname" : "ws_mousevol"
+											"parameter_longname" : "ws_mousevol",
+											"parameter_mmax" : 6.0,
+											"parameter_shortname" : "Mouse",
+											"parameter_type" : 0
 										}
 
 									}
@@ -515,7 +526,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u629000596"
+									"varname" : "u300000614"
 								}
 
 							}
@@ -566,14 +577,14 @@
 									"patching_rect" : [ 387.0, 152.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_mmax" : 30.0,
-											"parameter_shortname" : "Speed",
-											"parameter_type" : 0,
 											"parameter_unitstyle" : 1,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : 4.0,
 											"parameter_exponent" : 2.0,
-											"parameter_longname" : "ws_lfo"
+											"parameter_longname" : "ws_lfo",
+											"parameter_mmax" : 30.0,
+											"parameter_shortname" : "Speed",
+											"parameter_type" : 0
 										}
 
 									}
@@ -692,14 +703,14 @@
 									"patching_rect" : [ 181.0, 37.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_mmax" : 20000.0,
-											"parameter_shortname" : "Freq",
-											"parameter_type" : 0,
 											"parameter_unitstyle" : 3,
 											"parameter_linknames" : 1,
 											"parameter_mmin" : 20.0,
 											"parameter_exponent" : 3.0,
-											"parameter_longname" : "ws_freq"
+											"parameter_longname" : "ws_freq",
+											"parameter_mmax" : 20000.0,
+											"parameter_shortname" : "Freq",
+											"parameter_type" : 0
 										}
 
 									}
@@ -1729,6 +1740,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-12", 0 ]

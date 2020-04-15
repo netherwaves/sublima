@@ -1,6 +1,7 @@
 # GENERAL
 Integrate smooth transitions between phases (MAX/MSP compliant)
 [x] Selective feedback system (use PGraphics recursion)
+Add generative background (displayed through a GLSL shader)
 
 # MOUSE TRAIL
 Exclusive eedback effect on (certain?) mouse trail visual components
