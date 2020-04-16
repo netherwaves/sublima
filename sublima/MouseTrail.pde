@@ -184,10 +184,9 @@ class WaterParticle extends Particle {
 
         // send OSC message
         String[] oscParams = {
-            String.format("%.5f", pos.x),
-            String.format("%.5f", pos.y),
-            String.format("%.5f", dir.x),
-            String.format("%.5f", dir.y)
+            String.format("%.5f", map(pos.x, 0, width, -1, 1)),
+            String.format("%.5f", map(pos.y, 0, height, -1, 1)),
+            String.format("%.5f", PVector.angleBetween(dir, new PVector(1, 0)))
         };
         sendOSC("/mousetrail/water/particle", String.join(" ", oscParams));
     }

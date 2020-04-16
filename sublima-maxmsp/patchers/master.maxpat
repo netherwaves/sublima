@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 338.0, 264.0, 29.5, 22.0 ],
+					"text" : "1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 338.0, 235.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -59,18 +83,6 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 505.0, 294.0, 58.0, 22.0 ],
 					"text" : "loadbang"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 338.0, 262.0, 70.0, 22.0 ],
-					"text" : "loadmess 1"
 				}
 
 			}
@@ -205,14 +217,14 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 402.0, 464.0, 73.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 100, 100, 500, 600 ],
+						"client_rect" : [ 4, 44, 358, 172 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 516 ]
+						"storage_rect" : [ 365, 44, 816, 172 ]
 					}
 ,
 					"text" : "pattrstorage",
-					"varname" : "u657000313"
+					"varname" : "u770000313"
 				}
 
 			}
@@ -309,6 +321,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -344,13 +363,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-22", 0 ],
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -381,6 +393,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
@@ -395,84 +414,117 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-2::obj-27.8::obj-23" : [ "live.dial[7]", "live.dial", 0 ],
-			"obj-2::obj-27.10::obj-21" : [ "live.gain~[18]", "live.gain~", 0 ],
-			"obj-2::obj-27.1::obj-23" : [ "live.dial", "live.dial", 0 ],
-			"obj-4::obj-32" : [ "live.dial[21]", "live.dial[20]", 0 ],
-			"obj-2::obj-27.4::obj-21" : [ "live.gain~[3]", "live.gain~", 0 ],
-			"obj-4::obj-17" : [ "rvb_diff", "Diffusion", 0 ],
-			"obj-2::obj-27.6::obj-23" : [ "live.dial[5]", "live.dial", 0 ],
-			"obj-2::obj-27.1::obj-21" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-4::obj-3" : [ "water_vol", "Water", 0 ],
-			"obj-2::obj-27.9::obj-23" : [ "live.dial[19]", "live.dial", 0 ],
-			"obj-4::obj-41" : [ "live.dial[23]", "live.dial[20]", 0 ],
-			"obj-2::obj-39::obj-35" : [ "ws_lfo", "Speed", 0 ],
-			"obj-2::obj-27.2::obj-23" : [ "live.dial[1]", "live.dial", 0 ],
-			"obj-4::obj-40" : [ "live.dial[22]", "live.dial[20]", 0 ],
-			"obj-4::obj-16" : [ "rvb_damping", "Damping", 0 ],
-			"obj-2::obj-27.5::obj-23" : [ "live.dial[4]", "live.dial", 0 ],
-			"obj-4::obj-25" : [ "vapor_vol", "Vapor", 0 ],
-			"obj-2::obj-27.7::obj-23" : [ "live.dial[6]", "live.dial", 0 ],
 			"obj-2::obj-27.3::obj-23" : [ "live.dial[2]", "live.dial", 0 ],
-			"obj-4::obj-33" : [ "idle_vol", "Idle", 0 ],
-			"obj-4::obj-42" : [ "live.dial[24]", "live.dial[20]", 0 ],
-			"obj-4::obj-14" : [ "rvb_size", "Size", 0 ],
-			"obj-2::obj-27.6::obj-21" : [ "live.gain~[5]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.1::obj-14" : [ "ws_freq", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.45::obj-14" : [ "ws_freq[44]", "Freq", 0 ],
+			"obj-4::obj-3" : [ "water_vol", "Water", 0 ],
+			"obj-2::obj-39::obj-46.24::obj-14" : [ "ws_freq[23]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.5::obj-14" : [ "ws_freq[4]", "Freq", 0 ],
+			"obj-2::obj-27.6::obj-23" : [ "live.dial[5]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.64::obj-14" : [ "ws_freq[63]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.15::obj-14" : [ "ws_freq[14]", "Freq", 0 ],
 			"obj-2::obj-27.8::obj-21" : [ "live.gain~[7]", "live.gain~", 0 ],
-			"obj-2::obj-39::obj-82" : [ "ws_mousevol", "Mouse", 0 ],
-			"obj-2::obj-27.2::obj-21" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-4::obj-20" : [ "ice_vol", "Ice", 0 ],
-			"obj-2::obj-27.4::obj-23" : [ "live.dial[3]", "live.dial", 0 ],
-			"obj-4::obj-15" : [ "rvb_decay", "Decay", 0 ],
-			"obj-2::obj-27.7::obj-21" : [ "live.gain~[6]", "live.gain~", 0 ],
-			"obj-2::obj-27.9::obj-21" : [ "live.gain~[19]", "live.gain~", 0 ],
 			"obj-2::obj-27.10::obj-23" : [ "live.dial[18]", "live.dial", 0 ],
-			"obj-2::obj-39::obj-14" : [ "ws_freq", "Freq", 0 ],
-			"obj-4::obj-28" : [ "evt_vol", "Events", 0 ],
+			"obj-2::obj-39::obj-46.16::obj-14" : [ "ws_freq[15]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.58::obj-14" : [ "ws_freq[57]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.59::obj-14" : [ "ws_freq[58]", "Freq", 0 ],
+			"obj-4::obj-16" : [ "rvb_damping", "Damping", 0 ],
+			"obj-2::obj-39::obj-46.52::obj-14" : [ "ws_freq[51]", "Freq", 0 ],
+			"obj-2::obj-27.2::obj-21" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-4::obj-25" : [ "vapor_vol", "Vapor", 0 ],
+			"obj-2::obj-39::obj-46.2::obj-14" : [ "ws_freq[1]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.32::obj-14" : [ "ws_freq[31]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.53::obj-14" : [ "ws_freq[52]", "Freq", 0 ],
+			"obj-4::obj-41" : [ "live.dial[23]", "live.dial[20]", 0 ],
+			"obj-2::obj-27.4::obj-23" : [ "live.dial[3]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.6::obj-14" : [ "ws_freq[5]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.46::obj-14" : [ "ws_freq[45]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.14::obj-14" : [ "ws_freq[13]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.33::obj-14" : [ "ws_freq[32]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.36::obj-14" : [ "ws_freq[35]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.47::obj-14" : [ "ws_freq[46]", "Freq", 0 ],
+			"obj-2::obj-39::obj-30" : [ "live.gain~[10]", "live.gain~[8]", 0 ],
+			"obj-2::obj-27.10::obj-21" : [ "live.gain~[18]", "live.gain~", 0 ],
+			"obj-2::obj-27.7::obj-21" : [ "live.gain~[6]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.35::obj-14" : [ "ws_freq[34]", "Freq", 0 ],
+			"obj-2::obj-27.9::obj-23" : [ "live.dial[19]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.26::obj-14" : [ "ws_freq[25]", "Freq", 0 ],
+			"obj-4::obj-33" : [ "idle_vol", "Idle", 0 ],
+			"obj-2::obj-39::obj-46.31::obj-14" : [ "ws_freq[30]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.10::obj-14" : [ "ws_freq[9]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.60::obj-14" : [ "ws_freq[59]", "Freq", 0 ],
+			"obj-4::obj-14" : [ "rvb_size", "Size", 0 ],
+			"obj-2::obj-39::obj-46.4::obj-14" : [ "ws_freq[3]", "Freq", 0 ],
 			"obj-2::obj-27.3::obj-21" : [ "live.gain~[2]", "live.gain~", 0 ],
-			"obj-4::obj-12" : [ "master_gain", "Master", 0 ],
-			"obj-4::obj-27" : [ "live.dial[20]", "live.dial[20]", 0 ],
+			"obj-2::obj-39::obj-46.18::obj-14" : [ "ws_freq[17]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.54::obj-14" : [ "ws_freq[53]", "Freq", 0 ],
 			"obj-2::obj-27.5::obj-21" : [ "live.gain~[4]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.40::obj-14" : [ "ws_freq[39]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.48::obj-14" : [ "ws_freq[47]", "Freq", 0 ],
+			"obj-4::obj-42" : [ "live.dial[24]", "live.dial[20]", 0 ],
+			"obj-2::obj-27.8::obj-23" : [ "live.dial[7]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.30::obj-14" : [ "ws_freq[29]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.9::obj-14" : [ "ws_freq[8]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.42::obj-14" : [ "ws_freq[41]", "Freq", 0 ],
+			"obj-4::obj-40" : [ "live.dial[22]", "live.dial[20]", 0 ],
+			"obj-4::obj-20" : [ "ice_vol", "Ice", 0 ],
+			"obj-2::obj-39::obj-46.17::obj-14" : [ "ws_freq[16]", "Freq", 0 ],
+			"obj-4::obj-32" : [ "live.dial[21]", "live.dial[20]", 0 ],
+			"obj-4::obj-15" : [ "rvb_decay", "Decay", 0 ],
+			"obj-2::obj-39::obj-46.13::obj-14" : [ "ws_freq[12]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.61::obj-14" : [ "ws_freq[60]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.29::obj-14" : [ "ws_freq[28]", "Freq", 0 ],
+			"obj-2::obj-27.4::obj-21" : [ "live.gain~[3]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.62::obj-14" : [ "ws_freq[61]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.8::obj-14" : [ "ws_freq[7]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.55::obj-14" : [ "ws_freq[54]", "Freq", 0 ],
+			"obj-2::obj-27.1::obj-23" : [ "live.dial", "live.dial", 0 ],
+			"obj-2::obj-27.6::obj-21" : [ "live.gain~[5]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.56::obj-14" : [ "ws_freq[55]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.49::obj-14" : [ "ws_freq[48]", "Freq", 0 ],
+			"obj-4::obj-28" : [ "evt_vol", "Events", 0 ],
+			"obj-2::obj-27.9::obj-21" : [ "live.gain~[19]", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.25::obj-14" : [ "ws_freq[24]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.50::obj-14" : [ "ws_freq[49]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.43::obj-14" : [ "ws_freq[42]", "Freq", 0 ],
+			"obj-4::obj-12" : [ "master_gain", "Master", 0 ],
+			"obj-2::obj-39::obj-46.28::obj-14" : [ "ws_freq[27]", "Freq", 0 ],
+			"obj-2::obj-27.2::obj-23" : [ "live.dial[1]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.44::obj-14" : [ "ws_freq[43]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.3::obj-14" : [ "ws_freq[2]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.38::obj-14" : [ "ws_freq[37]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.12::obj-14" : [ "ws_freq[11]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.39::obj-14" : [ "ws_freq[38]", "Freq", 0 ],
+			"obj-2::obj-27.5::obj-23" : [ "live.dial[4]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.19::obj-14" : [ "ws_freq[18]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.63::obj-14" : [ "ws_freq[62]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.34::obj-14" : [ "ws_freq[33]", "Freq", 0 ],
+			"obj-2::obj-27.7::obj-23" : [ "live.dial[6]", "live.dial", 0 ],
+			"obj-2::obj-39::obj-46.20::obj-14" : [ "ws_freq[19]", "Freq", 0 ],
+			"obj-4::obj-27" : [ "live.dial[20]", "live.dial[20]", 0 ],
+			"obj-2::obj-27.1::obj-21" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-2::obj-39::obj-46.41::obj-14" : [ "ws_freq[40]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.57::obj-14" : [ "ws_freq[56]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.21::obj-14" : [ "ws_freq[20]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.27::obj-14" : [ "ws_freq[26]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.22::obj-14" : [ "ws_freq[21]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.37::obj-14" : [ "ws_freq[36]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.51::obj-14" : [ "ws_freq[50]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.11::obj-14" : [ "ws_freq[10]", "Freq", 0 ],
+			"obj-4::obj-17" : [ "rvb_diff", "Diffusion", 0 ],
+			"obj-2::obj-39::obj-46.7::obj-14" : [ "ws_freq[6]", "Freq", 0 ],
+			"obj-2::obj-39::obj-46.23::obj-14" : [ "ws_freq[22]", "Freq", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-2::obj-27.8::obj-23" : 				{
-					"parameter_longname" : "live.dial[7]"
+				"obj-2::obj-27.3::obj-23" : 				{
+					"parameter_longname" : "live.dial[2]"
 				}
 ,
-				"obj-2::obj-27.10::obj-21" : 				{
-					"parameter_longname" : "live.gain~[18]"
-				}
-,
-				"obj-2::obj-27.1::obj-23" : 				{
-					"parameter_longname" : "live.dial",
-					"parameter_shortname" : "live.dial",
-					"parameter_unitstyle" : 8
-				}
-,
-				"obj-4::obj-32" : 				{
-					"parameter_longname" : "live.dial[21]",
-					"parameter_range" : [ 0.0, 1.0 ]
-				}
-,
-				"obj-2::obj-27.4::obj-21" : 				{
-					"parameter_longname" : "live.gain~[3]"
-				}
-,
-				"obj-4::obj-17" : 				{
-					"parameter_longname" : "rvb_diff",
-					"parameter_linknames" : 1,
-					"parameter_shortname" : "Diffusion"
-				}
-,
-				"obj-2::obj-27.6::obj-23" : 				{
-					"parameter_longname" : "live.dial[5]"
-				}
-,
-				"obj-2::obj-27.1::obj-21" : 				{
-					"parameter_longname" : "live.gain~"
+				"obj-2::obj-39::obj-46.45::obj-14" : 				{
+					"parameter_longname" : "ws_freq[44]"
 				}
 ,
 				"obj-4::obj-3" : 				{
@@ -480,24 +532,44 @@
 					"parameter_linknames" : 1
 				}
 ,
-				"obj-2::obj-27.9::obj-23" : 				{
-					"parameter_longname" : "live.dial[19]"
+				"obj-2::obj-39::obj-46.24::obj-14" : 				{
+					"parameter_longname" : "ws_freq[23]"
 				}
 ,
-				"obj-4::obj-41" : 				{
-					"parameter_longname" : "live.dial[23]",
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_unitstyle" : 1
+				"obj-2::obj-39::obj-46.5::obj-14" : 				{
+					"parameter_longname" : "ws_freq[4]"
 				}
 ,
-				"obj-2::obj-27.2::obj-23" : 				{
-					"parameter_longname" : "live.dial[1]"
+				"obj-2::obj-27.6::obj-23" : 				{
+					"parameter_longname" : "live.dial[5]"
 				}
 ,
-				"obj-4::obj-40" : 				{
-					"parameter_longname" : "live.dial[22]",
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_unitstyle" : 1
+				"obj-2::obj-39::obj-46.64::obj-14" : 				{
+					"parameter_longname" : "ws_freq[63]"
+				}
+,
+				"obj-2::obj-39::obj-46.15::obj-14" : 				{
+					"parameter_longname" : "ws_freq[14]"
+				}
+,
+				"obj-2::obj-27.8::obj-21" : 				{
+					"parameter_longname" : "live.gain~[7]"
+				}
+,
+				"obj-2::obj-27.10::obj-23" : 				{
+					"parameter_longname" : "live.dial[18]"
+				}
+,
+				"obj-2::obj-39::obj-46.16::obj-14" : 				{
+					"parameter_longname" : "ws_freq[15]"
+				}
+,
+				"obj-2::obj-39::obj-46.58::obj-14" : 				{
+					"parameter_longname" : "ws_freq[57]"
+				}
+,
+				"obj-2::obj-39::obj-46.59::obj-14" : 				{
+					"parameter_longname" : "ws_freq[58]"
 				}
 ,
 				"obj-4::obj-16" : 				{
@@ -506,8 +578,12 @@
 					"parameter_shortname" : "Damping"
 				}
 ,
-				"obj-2::obj-27.5::obj-23" : 				{
-					"parameter_longname" : "live.dial[4]"
+				"obj-2::obj-39::obj-46.52::obj-14" : 				{
+					"parameter_longname" : "ws_freq[51]"
+				}
+,
+				"obj-2::obj-27.2::obj-21" : 				{
+					"parameter_longname" : "live.gain~[1]"
 				}
 ,
 				"obj-4::obj-25" : 				{
@@ -515,12 +591,70 @@
 					"parameter_shortname" : "Vapor"
 				}
 ,
-				"obj-2::obj-27.7::obj-23" : 				{
-					"parameter_longname" : "live.dial[6]"
+				"obj-2::obj-39::obj-46.2::obj-14" : 				{
+					"parameter_longname" : "ws_freq[1]"
 				}
 ,
-				"obj-2::obj-27.3::obj-23" : 				{
-					"parameter_longname" : "live.dial[2]"
+				"obj-2::obj-39::obj-46.32::obj-14" : 				{
+					"parameter_longname" : "ws_freq[31]"
+				}
+,
+				"obj-2::obj-39::obj-46.53::obj-14" : 				{
+					"parameter_longname" : "ws_freq[52]"
+				}
+,
+				"obj-4::obj-41" : 				{
+					"parameter_longname" : "live.dial[23]",
+					"parameter_range" : [ 0.0, 1.0 ],
+					"parameter_unitstyle" : 1
+				}
+,
+				"obj-2::obj-27.4::obj-23" : 				{
+					"parameter_longname" : "live.dial[3]"
+				}
+,
+				"obj-2::obj-39::obj-46.6::obj-14" : 				{
+					"parameter_longname" : "ws_freq[5]"
+				}
+,
+				"obj-2::obj-39::obj-46.46::obj-14" : 				{
+					"parameter_longname" : "ws_freq[45]"
+				}
+,
+				"obj-2::obj-39::obj-46.14::obj-14" : 				{
+					"parameter_longname" : "ws_freq[13]"
+				}
+,
+				"obj-2::obj-39::obj-46.33::obj-14" : 				{
+					"parameter_longname" : "ws_freq[32]"
+				}
+,
+				"obj-2::obj-39::obj-46.36::obj-14" : 				{
+					"parameter_longname" : "ws_freq[35]"
+				}
+,
+				"obj-2::obj-39::obj-46.47::obj-14" : 				{
+					"parameter_longname" : "ws_freq[46]"
+				}
+,
+				"obj-2::obj-27.10::obj-21" : 				{
+					"parameter_longname" : "live.gain~[18]"
+				}
+,
+				"obj-2::obj-27.7::obj-21" : 				{
+					"parameter_longname" : "live.gain~[6]"
+				}
+,
+				"obj-2::obj-39::obj-46.35::obj-14" : 				{
+					"parameter_longname" : "ws_freq[34]"
+				}
+,
+				"obj-2::obj-27.9::obj-23" : 				{
+					"parameter_longname" : "live.dial[19]"
+				}
+,
+				"obj-2::obj-39::obj-46.26::obj-14" : 				{
+					"parameter_longname" : "ws_freq[25]"
 				}
 ,
 				"obj-4::obj-33" : 				{
@@ -529,10 +663,16 @@
 					"parameter_linknames" : 1
 				}
 ,
-				"obj-4::obj-42" : 				{
-					"parameter_longname" : "live.dial[24]",
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_unitstyle" : 1
+				"obj-2::obj-39::obj-46.31::obj-14" : 				{
+					"parameter_longname" : "ws_freq[30]"
+				}
+,
+				"obj-2::obj-39::obj-46.10::obj-14" : 				{
+					"parameter_longname" : "ws_freq[9]"
+				}
+,
+				"obj-2::obj-39::obj-46.60::obj-14" : 				{
+					"parameter_longname" : "ws_freq[59]"
 				}
 ,
 				"obj-4::obj-14" : 				{
@@ -541,16 +681,60 @@
 					"parameter_shortname" : "Size"
 				}
 ,
-				"obj-2::obj-27.6::obj-21" : 				{
-					"parameter_longname" : "live.gain~[5]"
+				"obj-2::obj-39::obj-46.4::obj-14" : 				{
+					"parameter_longname" : "ws_freq[3]"
 				}
 ,
-				"obj-2::obj-27.8::obj-21" : 				{
-					"parameter_longname" : "live.gain~[7]"
+				"obj-2::obj-27.3::obj-21" : 				{
+					"parameter_longname" : "live.gain~[2]"
 				}
 ,
-				"obj-2::obj-27.2::obj-21" : 				{
-					"parameter_longname" : "live.gain~[1]"
+				"obj-2::obj-39::obj-46.18::obj-14" : 				{
+					"parameter_longname" : "ws_freq[17]"
+				}
+,
+				"obj-2::obj-39::obj-46.54::obj-14" : 				{
+					"parameter_longname" : "ws_freq[53]"
+				}
+,
+				"obj-2::obj-27.5::obj-21" : 				{
+					"parameter_longname" : "live.gain~[4]"
+				}
+,
+				"obj-2::obj-39::obj-46.40::obj-14" : 				{
+					"parameter_longname" : "ws_freq[39]"
+				}
+,
+				"obj-2::obj-39::obj-46.48::obj-14" : 				{
+					"parameter_longname" : "ws_freq[47]"
+				}
+,
+				"obj-4::obj-42" : 				{
+					"parameter_longname" : "live.dial[24]",
+					"parameter_range" : [ 0.0, 1.0 ],
+					"parameter_unitstyle" : 1
+				}
+,
+				"obj-2::obj-27.8::obj-23" : 				{
+					"parameter_longname" : "live.dial[7]"
+				}
+,
+				"obj-2::obj-39::obj-46.30::obj-14" : 				{
+					"parameter_longname" : "ws_freq[29]"
+				}
+,
+				"obj-2::obj-39::obj-46.9::obj-14" : 				{
+					"parameter_longname" : "ws_freq[8]"
+				}
+,
+				"obj-2::obj-39::obj-46.42::obj-14" : 				{
+					"parameter_longname" : "ws_freq[41]"
+				}
+,
+				"obj-4::obj-40" : 				{
+					"parameter_longname" : "live.dial[22]",
+					"parameter_range" : [ 0.0, 1.0 ],
+					"parameter_unitstyle" : 1
 				}
 ,
 				"obj-4::obj-20" : 				{
@@ -559,8 +743,13 @@
 					"parameter_linknames" : 1
 				}
 ,
-				"obj-2::obj-27.4::obj-23" : 				{
-					"parameter_longname" : "live.dial[3]"
+				"obj-2::obj-39::obj-46.17::obj-14" : 				{
+					"parameter_longname" : "ws_freq[16]"
+				}
+,
+				"obj-4::obj-32" : 				{
+					"parameter_longname" : "live.dial[21]",
+					"parameter_range" : [ 0.0, 1.0 ]
 				}
 ,
 				"obj-4::obj-15" : 				{
@@ -569,16 +758,50 @@
 					"parameter_shortname" : "Decay"
 				}
 ,
-				"obj-2::obj-27.7::obj-21" : 				{
-					"parameter_longname" : "live.gain~[6]"
+				"obj-2::obj-39::obj-46.13::obj-14" : 				{
+					"parameter_longname" : "ws_freq[12]"
 				}
 ,
-				"obj-2::obj-27.9::obj-21" : 				{
-					"parameter_longname" : "live.gain~[19]"
+				"obj-2::obj-39::obj-46.61::obj-14" : 				{
+					"parameter_longname" : "ws_freq[60]"
 				}
 ,
-				"obj-2::obj-27.10::obj-23" : 				{
-					"parameter_longname" : "live.dial[18]"
+				"obj-2::obj-39::obj-46.29::obj-14" : 				{
+					"parameter_longname" : "ws_freq[28]"
+				}
+,
+				"obj-2::obj-27.4::obj-21" : 				{
+					"parameter_longname" : "live.gain~[3]"
+				}
+,
+				"obj-2::obj-39::obj-46.62::obj-14" : 				{
+					"parameter_longname" : "ws_freq[61]"
+				}
+,
+				"obj-2::obj-39::obj-46.8::obj-14" : 				{
+					"parameter_longname" : "ws_freq[7]"
+				}
+,
+				"obj-2::obj-39::obj-46.55::obj-14" : 				{
+					"parameter_longname" : "ws_freq[54]"
+				}
+,
+				"obj-2::obj-27.1::obj-23" : 				{
+					"parameter_longname" : "live.dial",
+					"parameter_shortname" : "live.dial",
+					"parameter_unitstyle" : 8
+				}
+,
+				"obj-2::obj-27.6::obj-21" : 				{
+					"parameter_longname" : "live.gain~[5]"
+				}
+,
+				"obj-2::obj-39::obj-46.56::obj-14" : 				{
+					"parameter_longname" : "ws_freq[55]"
+				}
+,
+				"obj-2::obj-39::obj-46.49::obj-14" : 				{
+					"parameter_longname" : "ws_freq[48]"
 				}
 ,
 				"obj-4::obj-28" : 				{
@@ -587,13 +810,77 @@
 					"parameter_linknames" : 1
 				}
 ,
-				"obj-2::obj-27.3::obj-21" : 				{
-					"parameter_longname" : "live.gain~[2]"
+				"obj-2::obj-27.9::obj-21" : 				{
+					"parameter_longname" : "live.gain~[19]"
+				}
+,
+				"obj-2::obj-39::obj-46.25::obj-14" : 				{
+					"parameter_longname" : "ws_freq[24]"
+				}
+,
+				"obj-2::obj-39::obj-46.50::obj-14" : 				{
+					"parameter_longname" : "ws_freq[49]"
+				}
+,
+				"obj-2::obj-39::obj-46.43::obj-14" : 				{
+					"parameter_longname" : "ws_freq[42]"
 				}
 ,
 				"obj-4::obj-12" : 				{
 					"parameter_longname" : "master_gain",
 					"parameter_linknames" : 1
+				}
+,
+				"obj-2::obj-39::obj-46.28::obj-14" : 				{
+					"parameter_longname" : "ws_freq[27]"
+				}
+,
+				"obj-2::obj-27.2::obj-23" : 				{
+					"parameter_longname" : "live.dial[1]"
+				}
+,
+				"obj-2::obj-39::obj-46.44::obj-14" : 				{
+					"parameter_longname" : "ws_freq[43]"
+				}
+,
+				"obj-2::obj-39::obj-46.3::obj-14" : 				{
+					"parameter_longname" : "ws_freq[2]"
+				}
+,
+				"obj-2::obj-39::obj-46.38::obj-14" : 				{
+					"parameter_longname" : "ws_freq[37]"
+				}
+,
+				"obj-2::obj-39::obj-46.12::obj-14" : 				{
+					"parameter_longname" : "ws_freq[11]"
+				}
+,
+				"obj-2::obj-39::obj-46.39::obj-14" : 				{
+					"parameter_longname" : "ws_freq[38]"
+				}
+,
+				"obj-2::obj-27.5::obj-23" : 				{
+					"parameter_longname" : "live.dial[4]"
+				}
+,
+				"obj-2::obj-39::obj-46.19::obj-14" : 				{
+					"parameter_longname" : "ws_freq[18]"
+				}
+,
+				"obj-2::obj-39::obj-46.63::obj-14" : 				{
+					"parameter_longname" : "ws_freq[62]"
+				}
+,
+				"obj-2::obj-39::obj-46.34::obj-14" : 				{
+					"parameter_longname" : "ws_freq[33]"
+				}
+,
+				"obj-2::obj-27.7::obj-23" : 				{
+					"parameter_longname" : "live.dial[6]"
+				}
+,
+				"obj-2::obj-39::obj-46.20::obj-14" : 				{
+					"parameter_longname" : "ws_freq[19]"
 				}
 ,
 				"obj-4::obj-27" : 				{
@@ -604,8 +891,54 @@
 					"parameter_exponent" : 2.0
 				}
 ,
-				"obj-2::obj-27.5::obj-21" : 				{
-					"parameter_longname" : "live.gain~[4]"
+				"obj-2::obj-27.1::obj-21" : 				{
+					"parameter_longname" : "live.gain~"
+				}
+,
+				"obj-2::obj-39::obj-46.41::obj-14" : 				{
+					"parameter_longname" : "ws_freq[40]"
+				}
+,
+				"obj-2::obj-39::obj-46.57::obj-14" : 				{
+					"parameter_longname" : "ws_freq[56]"
+				}
+,
+				"obj-2::obj-39::obj-46.21::obj-14" : 				{
+					"parameter_longname" : "ws_freq[20]"
+				}
+,
+				"obj-2::obj-39::obj-46.27::obj-14" : 				{
+					"parameter_longname" : "ws_freq[26]"
+				}
+,
+				"obj-2::obj-39::obj-46.22::obj-14" : 				{
+					"parameter_longname" : "ws_freq[21]"
+				}
+,
+				"obj-2::obj-39::obj-46.37::obj-14" : 				{
+					"parameter_longname" : "ws_freq[36]"
+				}
+,
+				"obj-2::obj-39::obj-46.51::obj-14" : 				{
+					"parameter_longname" : "ws_freq[50]"
+				}
+,
+				"obj-2::obj-39::obj-46.11::obj-14" : 				{
+					"parameter_longname" : "ws_freq[10]"
+				}
+,
+				"obj-4::obj-17" : 				{
+					"parameter_longname" : "rvb_diff",
+					"parameter_linknames" : 1,
+					"parameter_shortname" : "Diffusion"
+				}
+,
+				"obj-2::obj-39::obj-46.7::obj-14" : 				{
+					"parameter_longname" : "ws_freq[6]"
+				}
+,
+				"obj-2::obj-39::obj-46.23::obj-14" : 				{
+					"parameter_longname" : "ws_freq[22]"
 				}
 
 			}
@@ -649,6 +982,20 @@
 			}
 , 			{
 				"name" : "water_spin~.maxpat",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "water_trail~.maxpat",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "autopan.maxpat",
 				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

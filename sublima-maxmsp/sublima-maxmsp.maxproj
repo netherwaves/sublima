@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669840279,
+	"modificationdate" : 3669889056,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -46,6 +46,11 @@
 				"local" : 1
 			}
 ,
+			"autopan.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"mixer.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
@@ -71,7 +76,7 @@
 				"local" : 1
 			}
 ,
-			"autopan.maxpat" : 			{
+			"echo~.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -97,12 +102,12 @@
 		}
 ,
 		"externals" : 		{
-			"OSC-route.mxe64" : 			{
+			"OpenSoundControl.mxe64" : 			{
 				"kind" : "object",
 				"local" : 1
 			}
 ,
-			"OpenSoundControl.mxe64" : 			{
+			"OSC-route.mxe64" : 			{
 				"kind" : "object",
 				"local" : 1
 			}
