@@ -218,22 +218,11 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 353.0, 65.0, 22.0 ],
-					"text" : "plasmasys"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 305.0, 57.0, 22.0 ],
+					"patching_rect" : [ 15.0, 270.0, 57.0, 22.0 ],
 					"text" : "vaporsys"
 				}
 
@@ -244,7 +233,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 329.0, 42.0, 22.0 ],
+					"patching_rect" : [ 15.0, 294.0, 42.0, 22.0 ],
 					"text" : "icesys"
 				}
 
@@ -277,7 +266,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 281.0, 56.0, 22.0 ],
+					"patching_rect" : [ 15.0, 246.0, 56.0, 22.0 ],
 					"text" : "watersys",
 					"varname" : "watersys"
 				}
@@ -688,13 +677,6 @@
 			}
 , 			{
 				"name" : "vaporsys.maxpat",
-				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "plasmasys.maxpat",
 				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

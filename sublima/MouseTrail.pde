@@ -96,12 +96,14 @@ class MouseTrail {
         displace = PVector.sub(new PVector(mouseX, mouseY), pos).mult(0.2);
         vel = displace.mag();
         pos.add(displace);
+
+        sendOSCMessages();
     }
 
     // self-explanatory
     void sendOSCMessages() {
-        sendOSC("/mousetrail/x", pos.x);
-        sendOSC("/mousetrail/y", pos.y);
+        sendOSC("/mousetrail/x", map(pos.x, 0, width, 0, 1));
+        sendOSC("/mousetrail/y", map(pos.y, 0, height, 0, 1));
         sendOSC("/mousetrail/vel", vel);
     }
 
@@ -179,6 +181,15 @@ class WaterParticle extends Particle {
         colorMode(HSB, 360, 100, 100);
         fillColor = color(random(150, 230), random(60, 80), random(50, 80));
         colorMode(RGB, 255, 255, 255);
+
+        // send OSC message
+        String[] oscParams = {
+            String.format("%.5f", pos.x),
+            String.format("%.5f", pos.y),
+            String.format("%.5f", dir.x),
+            String.format("%.5f", dir.y)
+        };
+        sendOSC("/mousetrail/water/particle", String.join(" ", oscParams));
     }
 
     // update position, velocity and opacity

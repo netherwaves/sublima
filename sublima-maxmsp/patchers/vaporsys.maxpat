@@ -104,6 +104,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -112,7 +113,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 179.0, 267.0, 30.0, 30.0 ]
+									"patching_rect" : [ 67.0, 426.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -124,7 +125,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 132.0, 267.0, 30.0, 30.0 ]
+									"patching_rect" : [ 20.0, 426.0, 30.0, 30.0 ]
 								}
 
 							}
