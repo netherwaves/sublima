@@ -34,7 +34,8 @@
             },
             "--run"
           ]
-        }
+        },
+        "problemMatcher": []
       },
       {
         "label": "Export App (Windows)",

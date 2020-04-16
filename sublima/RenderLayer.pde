@@ -53,4 +53,7 @@ class RenderLayer {
     // get main render layer
     // (used to draw stuff to the layer from outside the instance)
     PGraphics getGraphics() { return main; }
+
+    // set feedback coefficient
+    void setFbCoeff(float newCoeff) { fbCoeff = newCoeff; }
 }
