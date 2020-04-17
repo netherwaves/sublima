@@ -73,4 +73,5 @@ void drawGUI() {
     textAlign(LEFT);
     text("fps: " + (int)frameRate, 10, 20);
     text("phase: " + phases[manager.getPhase()], 10, 35);
+    text("mousevel: " + mouseTrail.getVelocity(), 10, 50);
 }
