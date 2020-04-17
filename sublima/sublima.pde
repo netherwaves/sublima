@@ -7,9 +7,10 @@ MouseTrail mouseTrail;
 
 void setup() {
     size(1280, 720, P2D);
+    noCursor();
 
     // initialize graphics
-    isReady = true;
+    isReady = false;
     allowAnimate = true;
     loadingScreen();
 
@@ -21,7 +22,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    // initMaxEvents();
+    initMaxEvents();
 }
 
 void draw() {

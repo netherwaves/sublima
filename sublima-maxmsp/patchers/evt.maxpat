@@ -133,7 +133,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 107.0, 640.0, 480.0 ],
+						"rect" : [ 59.0, 107.0, 744.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -370,12 +370,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 585.0, 183.0, 45.0, 36.0 ],
+									"patching_rect" : [ 585.0, 183.0, 79.0, 22.0 ],
 									"text" : "phasor~ 100"
 								}
 
@@ -1677,7 +1676,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 418.416666666666401, 213.0, 101.5, 22.0 ],
-					"text" : "PHASE_VAPOR"
+					"text" : "PHASE_WATER"
 				}
 
 			}

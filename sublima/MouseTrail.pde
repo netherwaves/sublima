@@ -95,14 +95,13 @@ class MouseTrail {
         if (frameCount > ipStart + ipDelay) {
             ipStart = frameCount;
             ipDelay = pow(random(0, 1), 2) * map(constrain(vel, 0, 40), 0, 40, frameRate, frameRate/10);
-            println(ipDelay);
 
             // create new particle on timer reinit
             particles.add(new IceParticle(pos, vel));
         }
     }
 
-    // update animation variabless
+    // update animation variables
     void animate() {
         displace = PVector.sub(new PVector(mouseX, mouseY), pos).mult(0.2);
         vel = displace.mag();

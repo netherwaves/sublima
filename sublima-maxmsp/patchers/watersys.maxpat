@@ -372,7 +372,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1232.0, 134.0, 812.0, 804.0 ],
+						"rect" : [ 1194.0, 134.0, 812.0, 804.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -596,11 +596,11 @@
 									"patching_rect" : [ 683.5, 355.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_longname" : "live.dial[28]",
 											"parameter_mmax" : 100.0,
 											"parameter_shortname" : "Dry/Wet",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 5
+											"parameter_unitstyle" : 5,
+											"parameter_longname" : "live.dial[28]"
 										}
 
 									}
@@ -620,12 +620,12 @@
 									"patching_rect" : [ 634.5, 319.0, 41.0, 48.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_mmin" : 100.0,
-											"parameter_longname" : "live.dial[27]",
 											"parameter_mmax" : 1000.0,
 											"parameter_shortname" : "Delay",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 0
+											"parameter_unitstyle" : 0,
+											"parameter_mmin" : 100.0,
+											"parameter_longname" : "live.dial[27]"
 										}
 
 									}
@@ -666,8 +666,8 @@
 									"numinlets" : 6,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 144.0, 111.0, 22.0 ],
-									"text" : "scale -1. 1. -0.8 0.8"
+									"patching_rect" : [ 40.0, 144.0, 107.0, 22.0 ],
+									"text" : "scale 0. 1. -0.8 0.8"
 								}
 
 							}
@@ -723,8 +723,8 @@
 										"originallength" : [ 34239.216326530608058, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
-										"pitchshift" : [ 0.530138796567917 ],
-										"pitchshiftcent" : [ -1099 ],
+										"pitchshift" : [ 0.760624980181456 ],
+										"pitchshiftcent" : [ -474 ],
 										"quality" : "basic",
 										"timestretch" : [ 2 ]
 									}
@@ -1053,12 +1053,12 @@
 									"patching_rect" : [ 321.333333333333314, 334.0, 48.0, 136.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_mmin" : -70.0,
-											"parameter_longname" : "live.gain~[10]",
 											"parameter_mmax" : 6.0,
 											"parameter_shortname" : "live.gain~[8]",
 											"parameter_type" : 0,
-											"parameter_unitstyle" : 4
+											"parameter_unitstyle" : 4,
+											"parameter_mmin" : -70.0,
+											"parameter_longname" : "live.gain~[10]"
 										}
 
 									}
@@ -2163,7 +2163,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 34.5, 447.0, 34.5, 447.0 ],
 					"source" : [ "obj-39", 0 ]
 				}
 
