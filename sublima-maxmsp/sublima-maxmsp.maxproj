@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669889056,
+	"modificationdate" : 3669917758,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -51,6 +51,11 @@
 				"local" : 1
 			}
 ,
+			"echo~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"mixer.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
@@ -75,9 +80,12 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
+
+		}
 ,
-			"echo~.maxpat" : 			{
-				"kind" : "patcher",
+		"media" : 		{
+			"water_stream.aif" : 			{
+				"kind" : "audiofile",
 				"local" : 1
 			}
 

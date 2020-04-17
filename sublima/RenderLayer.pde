@@ -1,7 +1,6 @@
 class RenderLayer {
     PGraphics main, sub;
-    float fbCoeff;
-    float opacity;
+    float fbCoeff, opacity;
 
     // constructor
     RenderLayer(float _fbCoeff) {
