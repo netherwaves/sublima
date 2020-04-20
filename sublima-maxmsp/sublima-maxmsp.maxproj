@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3669917758,
+	"modificationdate" : 3670170205,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -77,6 +77,11 @@
 			}
 ,
 			"plasmasys.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"vapor_hover~.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
