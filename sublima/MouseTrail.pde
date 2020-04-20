@@ -84,9 +84,11 @@ class MouseTrail {
         }
 
         // create 12-15 hovering particles, once
-        for (int j = 0; j < 12; j++) {
+        int numVaporParticles = 12;
+        for (int j = 0; j < numVaporParticles; j++) {
             particles.add(new VaporParticle(pos));
         }
+        sendOSC("/mousetrail/vapor/hovers/size", numVaporParticles);
     }
 
     // manages ice particle generation logic
