@@ -1,12 +1,15 @@
 // Mouse trail
 class MouseTrail {
     // props
-    int phase;
-    PVector pos, displace;
-    float vel;
-    // phase-exclusive props
-    int wpThreshold;
-    float ipStart, ipDelay;
+    private int phase;
+    private PVector pos, displace;
+    private PVector posSmooth, displaceSmooth;
+    private float vel, velSmooth;
+    // phase props
+    private int wpThreshold;
+    private float ipStart, ipDelay;
+    // mouse halo props
+    private float haloTimer;
 
     // objects
     RenderLayer rl;
@@ -16,12 +19,20 @@ class MouseTrail {
     MouseTrail() {
         phase = PHASE_IDLE;
 
+        // initialize coarse-eased position
         pos = new PVector(mouseX, mouseY);
         displace = new PVector(0, 0);
         vel = 0;
+        // initialize smooth-eased position
+        posSmooth = new PVector(mouseX, mouseY);
+        displaceSmooth = new PVector(0, 0);
+        velSmooth = 0;
 
+        // phase props
         wpThreshold = 20;
         ipStart = frameCount;
+        // mouse halo props
+        haloTimer = 0;
 
         rl = new RenderLayer(0.93);
         particles = new ArrayList<Particle>();
@@ -60,8 +71,8 @@ class MouseTrail {
         rl.endDraw();
         rl.render();
 
-        fill(255, 0, 0);
-        ellipse(pos.x, pos.y, 10, 10);
+        // mouse halo
+        drawMouseHalo();
     }
 
     // manages water particle generation logic
@@ -103,12 +114,54 @@ class MouseTrail {
         }
     }
 
+    // draw mouse halo
+    void drawMouseHalo() {
+        pushMatrix();
+        translate(pos.x, pos.y);
+        scale(map(velSmooth, 0, 60, 1, 1.4));
+
+        // fake circle gradient background
+        float radius = map(sin(frameCount/40.0), -1, 1, 25, 30);
+        float opacity = map(sin(frameCount/41.0 + 10), -1, 1, 15, 40) * map(velSmooth, 0, 60, 1, 1.3);
+        for (int i = (int)radius; i >= 1; i--) {
+            fill(lerpColor(color(255, opacity), color(0, opacity), pow(i / radius, 2.0)));
+            ellipse(0, 0, i*2, i*2);
+        }
+
+        // center cursor
+        // TODO: change shape depending on phase (circle-triangle-square)
+        // TODO: effets de couleur/opacité rétroactifs à l'action avec des objets environnants(?)
+        fill(0);
+        strokeWeight(1);
+        stroke(127);
+        ellipse(constrain(displaceSmooth.x, -radius, radius), constrain(displaceSmooth.y, -radius, radius), 12, 12);
+
+        // mouse direction arc
+        haloTimer += map(vel, 0, 60, 3, 15);
+        noFill();
+        strokeWeight(2);
+        stroke(10);
+        pushMatrix();
+        rotate((displaceSmooth.y < 0 ? -1 : 1) * PVector.angleBetween(new PVector(1, 0), displaceSmooth));
+        arc(0, 0, radius*0.9, radius*0.9, -QUARTER_PI, QUARTER_PI);
+        popMatrix();
+        noStroke();
+
+        popMatrix();
+    }
+
     // update animation variables
     void animate() {
-        displace = PVector.sub(new PVector(mouseX, mouseY), pos).mult(0.2);
+        // coarse
+        displace = PVector.sub(new PVector(mouseX, mouseY), pos).mult(0.25);
         vel = displace.mag();
         pos.add(displace);
+        // smooth
+        displaceSmooth = PVector.sub(new PVector(mouseX, mouseY), posSmooth).mult(0.08);
+        velSmooth = displaceSmooth.mag();
+        posSmooth.add(displaceSmooth);
 
+        // send out global mousetrail variables to Max/MSP
         sendOSCMessages();
     }
 
@@ -125,4 +178,5 @@ class MouseTrail {
     }
 
     float getVelocity() { return vel; }
+    PVector getPos() { return pos; }
 }
