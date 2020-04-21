@@ -10,6 +10,7 @@ class MouseTrail {
     private float ipStart, ipDelay;
     // mouse halo props
     private float haloTimer;
+    private boolean isInteractive;
 
     // objects
     RenderLayer rl;
@@ -27,13 +28,13 @@ class MouseTrail {
         posSmooth = new PVector(mouseX, mouseY);
         displaceSmooth = new PVector(0, 0);
         velSmooth = 0;
-
-        // phase props
+        // initialize phase props
         wpThreshold = 20;
         ipStart = frameCount;
-        // mouse halo props
+        // initialize mouse halo props
         haloTimer = 0;
-
+        isInteractive = false;
+        // initialize objects
         rl = new RenderLayer(0.93);
         particles = new ArrayList<Particle>();
     }
@@ -54,6 +55,7 @@ class MouseTrail {
         for (int i = 0; i < particles.size(); i++) {
             Particle p = particles.get(i);
 
+            // update particle and remove if dead
             p.update(pos);
             if (p.isDead()) {
                 particles.remove(i);
@@ -65,9 +67,11 @@ class MouseTrail {
                 if (!p.isDying()) p.queueDeath();
             }
 
+            // display to PGraphics
             p.display(pg);
         }
 
+        // end and render
         rl.endDraw();
         rl.render();
 
@@ -130,8 +134,8 @@ class MouseTrail {
 
         // center cursor
         // TODO: change shape depending on phase (circle-triangle-square)
-        // TODO: effets de couleur/opacité rétroactifs à l'action avec des objets environnants(?)
-        fill(0);
+        // TODO: change center cursor color depending on interactive state
+        fill(255);
         strokeWeight(1);
         stroke(127);
         ellipse(constrain(displaceSmooth.x, -radius, radius), constrain(displaceSmooth.y, -radius, radius), 12, 12);
@@ -139,11 +143,11 @@ class MouseTrail {
         // mouse direction arc
         haloTimer += map(vel, 0, 60, 3, 15);
         noFill();
-        strokeWeight(2);
+        strokeWeight(3);
         stroke(10);
         pushMatrix();
         rotate((displaceSmooth.y < 0 ? -1 : 1) * PVector.angleBetween(new PVector(1, 0), displaceSmooth));
-        arc(0, 0, radius*0.9, radius*0.9, -QUARTER_PI, QUARTER_PI);
+        arc(0, 0, radius*0.9, radius*0.9, -QUARTER_PI/2, QUARTER_PI/2);
         popMatrix();
         noStroke();
 
@@ -177,6 +181,11 @@ class MouseTrail {
         phase = newPhase;
     }
 
+    // mouse halo interactive state modifiers
+    // void trigInteractive() { isInteractive = true; }
+    // void detrigInteractive() { isInteractive = false; }
+
+    // getters
     float getVelocity() { return vel; }
     PVector getPos() { return pos; }
 }

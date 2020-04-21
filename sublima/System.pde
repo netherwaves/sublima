@@ -28,4 +28,7 @@ abstract class System {
     void transitionOut() {
         state = STATE_HIDDEN;
     }
+
+    // EVENTS
+    void click() {}
 }

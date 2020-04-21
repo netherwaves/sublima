@@ -1,11 +1,11 @@
 class WaterSystem extends System {
     // constants
-    final int NUM_SPINS = 10;
+    private final int NUM_SPINS = 10;
     // props
-    String[][] oscOut;
-    float feedbackCoeff;
+    private String[][] oscOut;
+    private float feedbackCoeff;
     // objects
-    ArrayList<WaterSpin> spins;
+    private ArrayList<WaterSpin> spins;
 
     // constructor
     WaterSystem() {
@@ -44,42 +44,57 @@ class WaterSystem extends System {
         rl.endDraw();
         super.display();
     }
+
+    void click() {
+        for (int i = 0; i < spins.size(); i++) {
+            spins.get(i).click();
+        }
+    }
 }
 
 
 class WaterSpin {
     // properties
     private PVector pos;
-    private float speed;
-    private float orbSize, orbTrajRadius;
-    private float theta;
-    private int index;
-
-    private boolean activated;
+    private float speed, orbSize, radius, theta, valueToActivated;
+    private int index, secondsToActivation;
+    private boolean activated, isMouseOver;
 
     // constructor
     WaterSpin(int _index) {
         index = _index;
 
         orbSize = random(4, 12);
-        orbTrajRadius = random(20, 40);
-        pos = new PVector(random(orbTrajRadius, width - orbTrajRadius), random(orbTrajRadius, height - orbTrajRadius));
+        radius = random(20, 40);
+        pos = new PVector(random(radius, width - radius), random(radius, height - radius));
         speed = random(0.5, 2);
 
         activated = false;
+        isMouseOver = false;
+        valueToActivated = 0;
+        secondsToActivation = 3;
     }
 
     // draw to screen
     void display(PGraphics pg) {
-        pg.fill(255, max(map(sin(theta), 0, 1, 0, 255), 0));
+        colorMode(HSB, 360, 100, 100);
+        color c = color(frameCount%360.0, 75, 70);
+        colorMode(RGB, 255, 255, 255);
+
+        pg.fill(activated ? c : 255, isMouseOver ? 255 : 0);
+        pg.ellipse(pos.x, pos.y, radius, radius);
+
+        pg.fill(activated ? c : 255, max(map(sin(theta), 0, 1, 0, 255), 0));
         pg.ellipse(
-            pos.x + cos(theta) * orbTrajRadius,
-            pos.y + sin(theta) * orbTrajRadius,
+            pos.x + cos(theta) * radius,
+            pos.y + sin(theta) * radius,
             orbSize, orbSize);
     }
 
     // update animation values
     void animate() {
+        isMouseOver = updateMouseOver();
+
         theta = map(frameCount, 0, 60, 0, PI * speed) % TWO_PI;
     }
 
@@ -87,4 +102,20 @@ class WaterSpin {
     float getTheta() { return theta; }
     float getPan() { return map(pos.x, 0, width, -1, 1); }
     float getVerticalMod() { return map(pos.y, 0, height, 1, 0); }
+
+    // check collision with mouse
+    boolean updateMouseOver() {
+        PVector mousePos = mouseTrail.getPos();
+        return PVector.dist(mousePos, pos) < radius;
+    }
+
+    // get click event and activate consequently
+    void click() {
+        if (isMouseOver) {
+            if (!activated) {
+                // SEND ACTIVATION EVENTS TO MAX/MSP
+            }
+            activated = true;
+        }
+    }
 }

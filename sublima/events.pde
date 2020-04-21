@@ -21,3 +21,8 @@ void changePhase(int newPhase) {
 
     sendOSC("/evt/change_phase", newPhase);
 }
+
+// mouse events
+void mouseClicked() {
+    manager.click();
+}

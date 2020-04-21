@@ -5,6 +5,8 @@ class SystemManager {
     WaterSystem watersys;
     VaporSystem vaporsys;
     IceSystem icesys;
+    // assets
+    PImage[] phaseIcons;
 
     // constructor
     SystemManager() {
@@ -13,6 +15,12 @@ class SystemManager {
         icesys = new IceSystem();
 
         phase = PHASE_IDLE;
+
+        // load assets
+        phaseIcons = new PImage[3];
+        phaseIcons[0] = loadImage("water_icon.png");
+        phaseIcons[1] = loadImage("vapor_icon.png");
+        phaseIcons[2] = loadImage("ice_icon.png");
     }
 
     // draw to screen
@@ -41,9 +49,19 @@ class SystemManager {
     }
 
     // phase getter/setter
-    void setPhase(int newPhase) { phase = newPhase; }
+    void setPhase(int newPhase) {
+        phase = newPhase;
+        // TODO: trigger icon display
+    }
     int getPhase() { return phase; }
 
     // TODO: this function
     boolean isTransitioning() { return false; }
+
+    // EVENTS
+    void click() {
+        watersys.click();
+        vaporsys.click();
+        icesys.click();
+    }
 }
