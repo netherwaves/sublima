@@ -1,9 +1,9 @@
 // global particle abstraction
 abstract class Particle {
-    PVector pos;
-    float startTime, lifespan;
-    float deathStart, deathLength;
-    boolean alive, deathQueued;
+    protected PVector pos;
+    protected float startTime, lifespan;
+    protected float deathStart, deathLength;
+    protected boolean alive, deathQueued;
 
     // constructor
     // set lifespan to 0 for an infinite particle
@@ -46,9 +46,9 @@ abstract class Particle {
 // water particles
 class WaterParticle extends Particle {
     // props
-    PVector dir;
-    float vel, opacity;
-    color fillColor;
+    private PVector dir;
+    private float vel, opacity;
+    private color fillColor;
 
     WaterParticle(PVector _pos, PVector _dir, float _vel) {
         super(_pos, random(frameRate, frameRate * 2));
@@ -93,8 +93,8 @@ class WaterParticle extends Particle {
 
 // vapor particles
 class VaporParticle extends Particle {
-    float noiseIndex, opacity, particleSize, orbitRadius;
-    PVector displace;
+    private float noiseIndex, opacity, particleSize, orbitRadius;
+    private PVector displace;
 
     VaporParticle(PVector _pos) {
         super(_pos, 0);
@@ -121,6 +121,12 @@ class VaporParticle extends Particle {
             (float)SimplexNoise.noise(noiseIndex, frameCount / 80.0, 4) * orbitRadius
         );
 
+        // send OSC message
+        sendOSC("/mousetrail/vapor/hovers/posx", String.format("%.5f", pos.x/width));
+        sendOSC("/mousetrail/vapor/hovers/posy", String.format("%.5f", pos.y/height));
+        sendOSC("/mousetrail/vapor/hovers/noisex", String.format("%.5f", displace.x/orbitRadius));
+        sendOSC("/mousetrail/vapor/hovers/noisey", String.format("%.5f", displace.y/orbitRadius));
+
         super.update(mousePos);
     }
 
@@ -132,13 +138,16 @@ class VaporParticle extends Particle {
         pg.fill(255, opacity * 255 * (deathQueued ? map(frameCount - deathStart, 0, 60 * 2, 1, 0) : 1));
         pg.ellipse(displacedPos.x, displacedPos.y, particleSize, particleSize);
     }
+
+    PVector getPos() { return pos; }
+    PVector getDisplace() { return displace; }
 }
 
 // ice particles
 class IceParticle extends Particle {
-    color fillColor;
-    float size, cornerBevel, theta, noiseIndex, vel;
-    PVector flicker;
+    private color fillColor;
+    private float size, cornerBevel, theta, noiseIndex, vel;
+    private PVector flicker;
 
     IceParticle(PVector _pos, float _vel) {
         super(_pos, random(frameRate * 0.5, frameRate));
@@ -156,6 +165,7 @@ class IceParticle extends Particle {
         flicker = new PVector(0, 0);
 
         // send OSC message
+        // order: size - theta - color difference - lifespan
     }
 
     void update(PVector mousePos) {

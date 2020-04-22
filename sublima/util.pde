@@ -1,11 +1,10 @@
 // water phases constants
 final int PHASE_IDLE = 0,
-          PHASE_WATER = 1,
-          PHASE_VAPOR = 2,
-          PHASE_ICE = 3,
-          PHASE_PLASMA = 4;
+          PHASE_VAPOR = 1,
+          PHASE_WATER = 2,
+          PHASE_ICE = 3;
 
-// system visibility constants
+// system visibility constants (not sure if i'm using these tbh)
 final int STATE_HIDDEN = 0;
 final int STATE_VISIBLE = 1;
 

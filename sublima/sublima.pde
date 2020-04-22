@@ -5,6 +5,9 @@ boolean isReady, allowAnimate;
 SystemManager manager;
 MouseTrail mouseTrail;
 
+// global assets
+PFont ttnorms;
+
 void setup() {
     size(1280, 720, P2D);
     noCursor();
@@ -13,6 +16,10 @@ void setup() {
     isReady = false;
     allowAnimate = true;
     loadingScreen();
+
+    // initialize global assets
+    ttnorms = createFont("TTNorms-Thin.otf", 72);
+    textFont(ttnorms);
 
     // initialize OSC bridge
     initOSC();
@@ -46,31 +53,27 @@ void draw() {
     mouseTrail.display();
 
     // draw GUI (debugging purposes)
-    drawGUI();
+    // drawGUI();
 }
 
 void loadingScreen() {
     background(0);
-    fill(255);
-    textAlign(CENTER);
-
-    text("getting ready...", width/2, height/2);
 }
 
 void keyPressed() {
     if (manager.isTransitioning()) return;
 
     // trigger transitions from here
-    if (key == 'c') changePhase(PHASE_WATER);
-    if (key == 'v') changePhase(PHASE_VAPOR);
-    if (key == 'b') changePhase(PHASE_ICE);
-    // if (key == 'n') changePhase(PHASE_PLASMA);
+    if (key == 'c') changePhaseAll(PHASE_VAPOR);
+    if (key == 'v') changePhaseAll(PHASE_WATER);
+    if (key == 'b') changePhaseAll(PHASE_ICE);
 }
 
 void drawGUI() {
-    String[] phases = { "PHASE_IDLE", "PHASE_WATER", "PHASE_VAPOR", "PHASE_ICE" };
+    String[] phases = { "PHASE_IDLE", "PHASE_VAPOR", "PHASE_WATER", "PHASE_ICE" };
 
     fill(255);
+    textSize(12);
     textAlign(LEFT);
     text("fps: " + (int)frameRate, 10, 20);
     text("phase: " + phases[manager.getPhase()], 10, 35);

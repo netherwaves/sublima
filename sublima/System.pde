@@ -1,15 +1,14 @@
 abstract class System {
     // props
-    String oscAddr;
-    int state;
-    RenderLayer rl;
+    protected String oscAddr;
+    protected int state;
+    protected RenderLayer rl;
 
     // constructor
-    System(String addr) {
+    System(String addr, float fbCoeff) {
         oscAddr = addr;
         state = STATE_HIDDEN;
-
-        rl = new RenderLayer(0.93);
+        rl = new RenderLayer(fbCoeff);
     }
 
     // display/animate
@@ -28,4 +27,7 @@ abstract class System {
     void transitionOut() {
         state = STATE_HIDDEN;
     }
+
+    // EVENTS
+    void click() {}
 }
