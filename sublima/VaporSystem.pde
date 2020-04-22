@@ -54,10 +54,6 @@ class VaporSystem extends System {
         haloShader.set("intensity", haloIntensity);
 
         // switch to next if intensity has reached its peak
-        if (haloIntensity > maxIntensity) {
-            // TODO: instead of changing phase statically,
-            // ask to go to the next one in a predetermined sequence
-            changePhaseAll(PHASE_WATER);
-        }
+        if (haloIntensity > maxIntensity) triggerNextPhase();
     }
 }
