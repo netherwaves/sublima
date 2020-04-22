@@ -19,8 +19,8 @@ void setup() {
     noLoop();
 
     // initialize global assets
-    normsThin = createFont("TTNorms-Thin.otf", 72);
-    normsLight = createFont("TTNorms-Light.otf", 48);
+    normsThin = createFont("fonts/TTNorms-Thin.otf", 72);
+    normsLight = createFont("fonts/TTNorms-Light.otf", 48);
 
     // initialize OSC bridge
     initOSC();

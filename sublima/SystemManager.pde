@@ -21,9 +21,9 @@ class SystemManager {
 
         // load images
         phaseIcons = new PImage[3];
-        phaseIcons[0] = loadImage("vapor_icon.png");
-        phaseIcons[1] = loadImage("water_icon.png");
-        phaseIcons[2] = loadImage("ice_icon.png");
+        phaseIcons[0] = loadImage("img/vapor_icon.png");
+        phaseIcons[1] = loadImage("img/water_icon.png");
+        phaseIcons[2] = loadImage("img/ice_icon.png");
     }
 
     // draw to screen

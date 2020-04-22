@@ -7,7 +7,7 @@ class VaporSystem extends System {
     VaporSystem() {
         super("/vaporsys", 0, "look around");
 
-        haloShader = loadShader("vapor_halo.glsl");
+        haloShader = loadShader("shaders/vapor_halo.glsl");
         haloDisplace = new PVector(0, 0);
         haloIntensity = 0;
         maxIntensity = 60;
