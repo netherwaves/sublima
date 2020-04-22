@@ -8,7 +8,7 @@ class WaterSystem extends System {
 
     // constructor
     WaterSystem() {
-        super("/watersys", 0.95);
+        super("/watersys", 0.95, "activate the streams");
 
         spins = new ArrayList<WaterSpin>();
         for (int i = 0; i < NUM_SPINS; i++) {

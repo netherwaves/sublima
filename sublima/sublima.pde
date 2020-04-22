@@ -6,20 +6,21 @@ SystemManager manager;
 MouseTrail mouseTrail;
 
 // global assets
-PFont ttnorms;
+PFont normsThin, normsLight;
 
 void setup() {
     size(1280, 720, P2D);
     noCursor();
 
     // initialize graphics
-    isReady = false;
+    isReady = true;
     allowAnimate = true;
     loadingScreen();
+    noLoop();
 
     // initialize global assets
-    ttnorms = createFont("TTNorms-Thin.otf", 72);
-    textFont(ttnorms);
+    normsThin = createFont("TTNorms-Thin.otf", 72);
+    normsLight = createFont("TTNorms-Light.otf", 48);
 
     // initialize OSC bridge
     initOSC();
@@ -29,7 +30,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    initMaxEvents();
+    // initMaxEvents();
 }
 
 void draw() {
@@ -61,12 +62,13 @@ void loadingScreen() {
 }
 
 void keyPressed() {
-    if (manager.isTransitioning()) return;
+    // if (manager.isTransitioning()) return;
 
     // trigger transitions from here
-    if (key == 'c') changePhaseAll(PHASE_VAPOR);
-    if (key == 'v') changePhaseAll(PHASE_WATER);
-    if (key == 'b') changePhaseAll(PHASE_ICE);
+    // if (key == 'c') changePhaseAll(PHASE_VAPOR);
+    // if (key == 'v') changePhaseAll(PHASE_WATER);
+    // if (key == 'b') changePhaseAll(PHASE_ICE);
+    if (key == ENTER) loop();
 }
 
 void drawGUI() {

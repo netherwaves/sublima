@@ -1,6 +1,6 @@
 class IceSystem extends System {
     IceSystem() {
-        super("/icesys", 1);
+        super("/icesys", 1, "??????");
     }
 
     void display() {
@@ -16,3 +16,9 @@ class IceSystem extends System {
     }
 }
 
+
+class IceTracker {
+    IceTracker() {
+
+    }
+}

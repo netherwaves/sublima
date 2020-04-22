@@ -3,18 +3,17 @@ class SystemManager {
     private int phase;
     private float iconOpacity;
     // systems
-    private VaporSystem vaporsys;
-    private WaterSystem watersys;
-    private IceSystem icesys;
+    private System[] systems;
     // assets
     private PImage[] phaseIcons;
 
     // constructor
     SystemManager() {
         // init systems
-        vaporsys = new VaporSystem();
-        watersys = new WaterSystem();
-        icesys = new IceSystem();
+        systems = new System[3];
+        systems[0] = new VaporSystem();
+        systems[1] = new WaterSystem();
+        systems[2] = new IceSystem();
 
         // init props
         phase = PHASE_IDLE;
@@ -44,33 +43,22 @@ class SystemManager {
 
         // display currently active system
         // TODO: make it work with transitions
-        switch(phase) {
-            case PHASE_VAPOR:
-                displaySystem(vaporsys);
-                break;
-            case PHASE_WATER:
-                displaySystem(watersys);
-                break;
-            case PHASE_ICE:
-                displaySystem(icesys);
-                break;
-        }
+        if (phase > PHASE_IDLE) displaySystem(systems[phase-1]);
 
-        // fct calculates a 2s up slope, 3s max hold, 2s down slope
+        // fct calculates a 2s up slope, 3s hold, 2s down slope
         // and applies to text fill opacity
-        int slopeTime = 2, holdTime = 3;
-        float h = slopeTime+(holdTime/2), a = 1/(float)slopeTime, k = h/2;
-        fill(255, constrain(-a * abs((frameCount/60.0)-h)+k, 0, 1) * 255);
+        fill(255, ahdsSlope(frameCount/60.0, 2, 3) * 255);
 
         // init phase after 5 seconds
         if (frameCount/60.0 > 5 && phase == PHASE_IDLE) {
             changePhaseAll(PHASE_VAPOR);
         }
 
-        // draw text
+        // draw text with wide letter spacing
+        // (thank you Processing for forcing me to do this with a for loop 🙂)
+        textFont(normsThin);
         textSize(40);
         textAlign(LEFT);
-
         String label = "SUBLIMA";
         float currWidth = 0, totalWidth = textWidth(label) + (40 * (label.length() - 1));
         for (int i = 0; i < label.length(); i++) {
@@ -90,8 +78,13 @@ class SystemManager {
 
     // set phase
     void setPhase(int newPhase) {
+        // fade out previous system (currently does nothing)
+        if (phase > PHASE_IDLE) systems[phase-1].transitionOut();
+        // change phase & show icon
         phase = newPhase;
         iconOpacity = 1;
+        // fade in next system
+        if (phase > PHASE_IDLE) systems[phase-1].transitionIn();
     }
     // get phase
     int getPhase() { return phase; }
@@ -101,8 +94,8 @@ class SystemManager {
 
     // EVENTS
     void click() {
-        vaporsys.click();
-        watersys.click();
-        icesys.click();
+        for (int i = 0; i < systems.length; i++) {
+            systems[i].click();
+        }
     }
 }
