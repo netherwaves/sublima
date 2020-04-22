@@ -237,8 +237,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 270.0, 14.0, 53.0, 20.0 ],
-					"text" : "displace"
+					"patching_rect" : [ 270.0, 14.0, 85.0, 20.0 ],
+					"text" : "v   displace   v"
 				}
 
 			}
@@ -248,8 +248,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 113.0, 14.0, 71.0, 20.0 ],
-					"text" : "smooth pos"
+					"patching_rect" : [ 103.0, 14.0, 103.0, 20.0 ],
+					"text" : "v   smooth pos   v"
 				}
 
 			}
@@ -311,13 +311,14 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 717.0, 150.0, 150.0, 20.0 ],
-					"text" : "the actual mouse pos"
+					"patching_rect" : [ 702.0, 150.0, 123.0, 20.0 ],
+					"text" : "v   true mouse pos   v"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-36",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -330,6 +331,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-35",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -496,12 +498,12 @@
 					"patching_rect" : [ 27.0, 382.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 6.0,
-							"parameter_shortname" : "live.gain~[12]",
-							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "live.gain~[12]"
+							"parameter_longname" : "live.gain~[12]",
+							"parameter_mmax" : 6.0,
+							"parameter_shortname" : "live.gain~[12]",
+							"parameter_type" : 0
 						}
 
 					}
@@ -546,6 +548,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -562,6 +565,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -578,6 +582,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -594,6 +599,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.513725490196078, 0.109803921568627, 0.109803921568627, 1.0 ],
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -919,7 +925,24 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-8" : [ "live.gain~[12]", "live.gain~[12]", 0 ],
+			"parameterbanks" : 			{
+
+			}
+
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "autopan.maxpat",
+				"bootpath" : "G:/UNI/Semestre 2/EDM4600/TP2/sublima-p5/sublima-maxmsp/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

@@ -1,53 +1,27 @@
 {
 	"pattrstorage" : 	{
-		"name" : "u820000313",
+		"name" : "u636000315",
 		"slots" : 		{
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
-					"watersys::watermouse::ws_freq" : [ 2233.980676465327178 ],
-					"watersys::watermouse::ws_lfo" : [ 5.974703949407893 ],
-					"watersys::watermouse::ws_mousevol" : [ -70.0 ],
+					"watersys::watermouse::wtm_delay" : [ 457.0 ],
+					"watersys::watermouse::wtm_dw" : [ 37.795275590551192 ],
+					"mixer::evt_toRVB" : [ 0.632463264926529 ],
 					"mixer::evt_vol" : [ -4.582677165354326 ],
+					"mixer::ice_toRVB" : [ 0.583359166718333 ],
 					"mixer::ice_vol" : [ -5.051546391752566 ],
+					"mixer::idle_toRVB" : [ 0.571393142786285 ],
 					"mixer::idle_vol" : [ -5.545092945856041 ],
 					"mixer::master_gain" : [ 0.0 ],
 					"mixer::rvb_damping" : [ 102.000000000000028 ],
 					"mixer::rvb_decay" : [ 56.999999999999979 ],
 					"mixer::rvb_diff" : [ 92.999999999999943 ],
 					"mixer::rvb_size" : [ 69.999999999999929 ],
+					"mixer::vapor_toRVB" : [ 0.607663215326431 ],
 					"mixer::vapor_vol" : [ -5.051546391752566 ],
-					"mixer::water_vol" : [ -6.037340693238086 ],
-					"mixer::idle_toRVB" : [ 0.469278938557877 ],
-					"mixer::water_toRVB" : [ 0.447950895901791 ],
-					"mixer::vapor_toRVB" : [ 0.416888833777668 ],
-					"mixer::ice_toRVB" : [ 0.427118854237708 ],
-					"mixer::evt_toRVB" : [ 0.632463264926529 ]
-				}
-
-			}
-,
-			"2" : 			{
-				"id" : 2,
-				"data" : 				{
-					"watersys::watermouse::ws_freq" : [  ],
-					"watersys::watermouse::ws_lfo" : [  ],
-					"watersys::watermouse::ws_mousevol" : [  ],
-					"mixer::evt_vol" : [  ],
-					"mixer::ice_vol" : [  ],
-					"mixer::idle_vol" : [  ],
-					"mixer::master_gain" : [ 0.0 ],
-					"mixer::rvb_damping" : [ 73.999999999999957 ],
-					"mixer::rvb_decay" : [ 74.999999999999929 ],
-					"mixer::rvb_diff" : [ 73.999999999999957 ],
-					"mixer::rvb_size" : [ 91.999999999999886 ],
-					"mixer::vapor_vol" : [  ],
-					"mixer::water_vol" : [ -3.385826771653541 ],
-					"mixer::idle_toRVB" : [  ],
-					"mixer::water_toRVB" : [  ],
-					"mixer::vapor_toRVB" : [  ],
-					"mixer::ice_toRVB" : [  ],
-					"mixer::evt_toRVB" : [  ]
+					"mixer::water_toRVB" : [ 0.60766321532643 ],
+					"mixer::water_vol" : [ -6.037340693238086 ]
 				}
 
 			}
