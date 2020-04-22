@@ -165,6 +165,7 @@ class IceParticle extends Particle {
         flicker = new PVector(0, 0);
 
         // send OSC message
+        // order: size - theta - color difference - lifespan
     }
 
     void update(PVector mousePos) {

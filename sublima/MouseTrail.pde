@@ -45,8 +45,8 @@ class MouseTrail {
 
         // generate corresponding particle type
         switch (phase) {
-            case PHASE_WATER: createWaterParticle(); break;
             case PHASE_VAPOR: createVaporParticle(); break;
+            case PHASE_WATER: createWaterParticle(); break;
             case PHASE_ICE:   createIceParticle();   break;
         }
 
@@ -78,15 +78,6 @@ class MouseTrail {
         drawCursor();
     }
 
-    // manages water particle generation logic
-    void createWaterParticle() {
-        // instanciate randomly depending on mouse velocity
-        float instanciate = random(vel/wpThreshold);
-        if (instanciate > 1.5) {
-            particles.add(new WaterParticle(pos, displace, vel*0.1));
-        }
-    }
-
     // manages vapor particle generation logic
     void createVaporParticle() {
         // TODO: check if particles were already existing
@@ -103,6 +94,15 @@ class MouseTrail {
             particles.add(new VaporParticle(pos));
         }
         sendOSC("/mousetrail/vapor/hovers/size", numVaporParticles);
+    }
+
+    // manages water particle generation logic
+    void createWaterParticle() {
+        // instanciate randomly depending on mouse velocity
+        float instanciate = random(vel/wpThreshold);
+        if (instanciate > 1.5) {
+            particles.add(new WaterParticle(pos, displace, vel*0.1));
+        }
     }
 
     // manages ice particle generation logic
@@ -178,9 +178,7 @@ class MouseTrail {
     }
 
     // alter mouse trail state
-    void setPhase(int newPhase) {
-        phase = newPhase;
-    }
+    void setPhase(int newPhase) { phase = newPhase; }
 
     // mouse halo interactive state modifiers
     // void trigInteractive() { isInteractive = true; }

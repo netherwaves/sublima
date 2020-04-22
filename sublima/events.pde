@@ -15,7 +15,7 @@ void appReady() {
 }
 
 // change phase of application
-void changePhase(int newPhase) {
+void changePhaseAll(int newPhase) {
     manager.setPhase(newPhase);
     mouseTrail.setPhase(newPhase);
 
