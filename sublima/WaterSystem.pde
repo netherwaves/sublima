@@ -14,20 +14,37 @@ class WaterSystem extends System {
         for (int i = 0; i < NUM_SPINS; i++) {
             spins.add(new WaterSpin(i));
         }
-        oscOut = new String[3][spins.size()];
+        // -- OUTGOING WATERSPIN PARAMETERS --
+        // [0] circle orbit angle (in radians)
+        // [1] X position (in px)
+        // [2] Y position (in px)
+        // [3] 1 if mouse over center sphere; 0 otherwise
+        // [4] 1 if spin is activated; 0 otherwise
+        oscOut = new String[5][spins.size()];
+    }
+
+    void animate() {
+        // update animation variables & OSC messages
+        WaterSpin ws;
+        for (int i = 0; i < spins.size(); i++) {
+            ws = spins.get(i);
+            ws.animate();
+
+            oscOut[0][i] = formatFloat(ws.getTheta(), 5);
+            oscOut[1][i] = formatFloat(ws.getPan(), 5);
+            oscOut[2][i] = formatFloat(ws.getVerticalMod(), 5);
+            oscOut[3][i] = String.format("%d", ws.getMouseOver());
+            oscOut[4][i] = String.format("%d", ws.getActivated());
+        }
     }
 
     // draw to screen
     void display() {
         rl.beginDraw();
 
-        // update and draw all spins
+        // draw all spins
+        WaterSpin ws;
         for (int i = 0; i < spins.size(); i++) {
-            spins.get(i).animate();
-            oscOut[0][i] = formatFloat(spins.get(i).getTheta(), 5);
-            oscOut[1][i] = formatFloat(spins.get(i).getPan(), 5);
-            oscOut[2][i] = formatFloat(spins.get(i).getVerticalMod(), 5);
-
             spins.get(i).display(rl.getGraphics());
         }
 
@@ -36,6 +53,8 @@ class WaterSystem extends System {
             sendOSC(oscAddr + "/spin/angles", String.join(" ", oscOut[0]));
             sendOSC(oscAddr + "/spin/pans", String.join(" ", oscOut[1]));
             sendOSC(oscAddr + "/spin/mods", String.join(" ", oscOut[2]));
+            sendOSC(oscAddr + "/spin/hovered", String.join(" ", oscOut[3]));
+            sendOSC(oscAddr + "/spin/activated", String.join(" ", oscOut[4]));
         }
 
         rl.endDraw();
@@ -55,7 +74,7 @@ class WaterSpin {
     private PVector pos, displace;
     private float speed, orbSize, radius, theta;
     private int index;
-    private boolean activated, isMouseOver;
+    private boolean isActivated, isMouseOver;
 
     // constructor
     WaterSpin(int _index) {
@@ -67,7 +86,7 @@ class WaterSpin {
         displace = new PVector(0, 0);
         speed = random(0.5, 2);
 
-        activated = false;
+        isActivated = false;
         isMouseOver = false;
     }
 
@@ -80,10 +99,10 @@ class WaterSpin {
         pg.pushMatrix();
         pg.translate(pos.x + displace.x, pos.y + displace.y);
 
-        pg.fill(activated ? c : 255, isMouseOver ? 255 : map(sin(frameCount/30.0 + index), -1, 1, 5, 25));
+        pg.fill(isActivated ? c : 255, isMouseOver ? 255 : map(sin(frameCount/30.0 + index), -1, 1, 5, 25));
         pg.ellipse(0, 0, radius, radius);
 
-        pg.fill(activated ? c : 255, map(sin(theta), -1, 1, 10, 255));
+        pg.fill(isActivated ? c : 255, map(sin(theta), -1, 1, 10, 255));
         pg.ellipse(
             cos(theta) * radius,
             sin(theta) * radius,
@@ -106,6 +125,8 @@ class WaterSpin {
     float getTheta() { return theta; }
     float getPan() { return map(pos.x + displace.x, 0, width, -1, 1); }
     float getVerticalMod() { return map(pos.y + displace.y, 0, height, 1, 0); }
+    int getMouseOver() { return isMouseOver ? 1 : 0; }
+    int getActivated() { return isActivated ? 1 : 0; }
 
     // check collision with mouse
     boolean updateMouseOver() {
@@ -116,10 +137,10 @@ class WaterSpin {
     // get click event and activate consequently
     void click() {
         if (isMouseOver) {
-            if (!activated) {
+            if (!isActivated) {
                 // SEND ACTIVATION EVENTS TO MAX/MSP
             }
-            activated = true;
+            isActivated = true;
         }
     }
 }

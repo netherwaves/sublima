@@ -1,14 +1,13 @@
 abstract class System {
     // props
-    String oscAddr;
-    int state;
-    RenderLayer rl;
+    protected String oscAddr;
+    protected int state;
+    protected RenderLayer rl;
 
     // constructor
     System(String addr, float fbCoeff) {
         oscAddr = addr;
         state = STATE_HIDDEN;
-
         rl = new RenderLayer(fbCoeff);
     }
 

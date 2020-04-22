@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 223.0, 149.0, 614.0, 619.0 ],
+		"rect" : [ 26.0, 204.0, 874.0, 619.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1263,8 +1263,8 @@
 										"originallength" : [ 34239.216326530608058, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
-										"pitchshift" : [ 0.760489376620505 ],
-										"pitchshiftcent" : [ -474 ],
+										"pitchshift" : [ 0.589375033974648 ],
+										"pitchshiftcent" : [ -915 ],
 										"quality" : "basic",
 										"timestretch" : [ 2 ]
 									}

@@ -10,7 +10,7 @@ void setup() {
     noCursor();
 
     // initialize graphics
-    isReady = true;
+    isReady = false;
     allowAnimate = true;
     loadingScreen();
 
@@ -22,7 +22,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    // initMaxEvents();
+    initMaxEvents();
 }
 
 void draw() {
@@ -61,14 +61,13 @@ void keyPressed() {
     if (manager.isTransitioning()) return;
 
     // trigger transitions from here
-    if (key == 'c') changePhase(PHASE_WATER);
-    if (key == 'v') changePhase(PHASE_VAPOR);
+    if (key == 'c') changePhase(PHASE_VAPOR);
+    if (key == 'v') changePhase(PHASE_WATER);
     if (key == 'b') changePhase(PHASE_ICE);
-    // if (key == 'n') changePhase(PHASE_PLASMA);
 }
 
 void drawGUI() {
-    String[] phases = { "PHASE_IDLE", "PHASE_WATER", "PHASE_VAPOR", "PHASE_ICE" };
+    String[] phases = { "PHASE_IDLE", "PHASE_VAPOR", "PHASE_WATER", "PHASE_ICE" };
 
     fill(255);
     textAlign(LEFT);
