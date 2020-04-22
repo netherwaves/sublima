@@ -10,7 +10,7 @@ void setup() {
     noCursor();
 
     // initialize graphics
-    isReady = false;
+    isReady = true;
     allowAnimate = true;
     loadingScreen();
 
@@ -22,7 +22,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    initMaxEvents();
+    // initMaxEvents();
 }
 
 void draw() {

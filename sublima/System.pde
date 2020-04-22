@@ -5,11 +5,11 @@ abstract class System {
     RenderLayer rl;
 
     // constructor
-    System(String addr) {
+    System(String addr, float fbCoeff) {
         oscAddr = addr;
         state = STATE_HIDDEN;
 
-        rl = new RenderLayer(0.93);
+        rl = new RenderLayer(fbCoeff);
     }
 
     // display/animate

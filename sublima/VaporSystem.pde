@@ -1,6 +1,6 @@
 class VaporSystem extends System {
     VaporSystem() {
-        super("/vaporsys");
+        super("/vaporsys", 0.93);
     }
 
     void display() {

@@ -2,9 +2,8 @@
 class MouseTrail {
     // props
     private int phase;
-    private PVector pos, displace;
-    private PVector posSmooth, displaceSmooth;
-    private float vel, velSmooth;
+    private PVector pos, displace, posSmooth, displaceSmooth;
+    private float vel, velSmooth, thetaSmooth;
     // phase props
     private int wpThreshold;
     private float ipStart, ipDelay;
@@ -29,7 +28,7 @@ class MouseTrail {
         displaceSmooth = new PVector(0, 0);
         velSmooth = 0;
         // initialize phase props
-        wpThreshold = 20;
+        wpThreshold = 10;
         ipStart = frameCount;
         // initialize mouse halo props
         haloTimer = 0;
@@ -76,14 +75,14 @@ class MouseTrail {
         rl.render();
 
         // mouse halo
-        drawMouseHalo();
+        drawCursor();
     }
 
     // manages water particle generation logic
     void createWaterParticle() {
         // instanciate randomly depending on mouse velocity
-        float instanciate = random(vel);
-        if (instanciate > wpThreshold) {
+        float instanciate = random(vel/wpThreshold);
+        if (instanciate > 1.5) {
             particles.add(new WaterParticle(pos, displace, vel*0.1));
         }
     }
@@ -119,7 +118,7 @@ class MouseTrail {
     }
 
     // draw mouse halo
-    void drawMouseHalo() {
+    void drawCursor() {
         pushMatrix();
         translate(pos.x, pos.y);
         scale(map(velSmooth, 0, 60, 1, 1.4));
@@ -135,7 +134,7 @@ class MouseTrail {
         // center cursor
         // TODO: change shape depending on phase (circle-triangle-square)
         // TODO: change center cursor color depending on interactive state
-        fill(255);
+        fill(0);
         strokeWeight(1);
         stroke(127);
         ellipse(constrain(displaceSmooth.x, -radius, radius), constrain(displaceSmooth.y, -radius, radius), 12, 12);
@@ -146,7 +145,7 @@ class MouseTrail {
         strokeWeight(3);
         stroke(10);
         pushMatrix();
-        rotate((displaceSmooth.y < 0 ? -1 : 1) * PVector.angleBetween(new PVector(1, 0), displaceSmooth));
+        rotate(thetaSmooth);
         arc(0, 0, radius*0.9, radius*0.9, -QUARTER_PI/2, QUARTER_PI/2);
         popMatrix();
         noStroke();
@@ -164,6 +163,8 @@ class MouseTrail {
         displaceSmooth = PVector.sub(new PVector(mouseX, mouseY), posSmooth).mult(0.08);
         velSmooth = displaceSmooth.mag();
         posSmooth.add(displaceSmooth);
+        float thetaCoarse = (displaceSmooth.y < 0 ? -1 : 1) * PVector.angleBetween(new PVector(1, 0), displaceSmooth);
+        thetaSmooth += (thetaCoarse - thetaSmooth) * 0.08;
 
         // send out global mousetrail variables to Max/MSP
         sendOSCMessages();

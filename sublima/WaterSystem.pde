@@ -3,21 +3,18 @@ class WaterSystem extends System {
     private final int NUM_SPINS = 10;
     // props
     private String[][] oscOut;
-    private float feedbackCoeff;
     // objects
     private ArrayList<WaterSpin> spins;
 
     // constructor
     WaterSystem() {
-        super("/watersys");
+        super("/watersys", 0.95);
 
         spins = new ArrayList<WaterSpin>();
         for (int i = 0; i < NUM_SPINS; i++) {
             spins.add(new WaterSpin(i));
         }
         oscOut = new String[3][spins.size()];
-
-        feedbackCoeff = 0.95;
     }
 
     // draw to screen
@@ -55,9 +52,9 @@ class WaterSystem extends System {
 
 class WaterSpin {
     // properties
-    private PVector pos;
-    private float speed, orbSize, radius, theta, valueToActivated;
-    private int index, secondsToActivation;
+    private PVector pos, displace;
+    private float speed, orbSize, radius, theta;
+    private int index;
     private boolean activated, isMouseOver;
 
     // constructor
@@ -66,13 +63,12 @@ class WaterSpin {
 
         orbSize = random(4, 12);
         radius = random(20, 40);
-        pos = new PVector(random(radius, width - radius), random(radius, height - radius));
+        pos = new PVector(random(radius*2, width - (radius*2)), random(radius*2, height - (radius*2)));
+        displace = new PVector(0, 0);
         speed = random(0.5, 2);
 
         activated = false;
         isMouseOver = false;
-        valueToActivated = 0;
-        secondsToActivation = 3;
     }
 
     // draw to screen
@@ -81,32 +77,40 @@ class WaterSpin {
         color c = color(frameCount%360.0, 75, 70);
         colorMode(RGB, 255, 255, 255);
 
-        pg.fill(activated ? c : 255, isMouseOver ? 255 : 0);
-        pg.ellipse(pos.x, pos.y, radius, radius);
+        pg.pushMatrix();
+        pg.translate(pos.x + displace.x, pos.y + displace.y);
 
-        pg.fill(activated ? c : 255, max(map(sin(theta), 0, 1, 0, 255), 0));
+        pg.fill(activated ? c : 255, isMouseOver ? 255 : map(sin(frameCount/30.0 + index), -1, 1, 5, 25));
+        pg.ellipse(0, 0, radius, radius);
+
+        pg.fill(activated ? c : 255, map(sin(theta), -1, 1, 10, 255));
         pg.ellipse(
-            pos.x + cos(theta) * radius,
-            pos.y + sin(theta) * radius,
+            cos(theta) * radius,
+            sin(theta) * radius,
             orbSize, orbSize);
+
+        pg.popMatrix();
     }
 
     // update animation values
     void animate() {
         isMouseOver = updateMouseOver();
-
+        displace.set(
+            (float)SimplexNoise.noise(index, frameCount/(60.0*10), 2) * radius*2,
+            (float)SimplexNoise.noise(index, frameCount/(60.0*10), 5) * radius*2
+        );
         theta = map(frameCount, 0, 60, 0, PI * speed) % TWO_PI;
     }
 
     // mod point getters
     float getTheta() { return theta; }
-    float getPan() { return map(pos.x, 0, width, -1, 1); }
-    float getVerticalMod() { return map(pos.y, 0, height, 1, 0); }
+    float getPan() { return map(pos.x + displace.x, 0, width, -1, 1); }
+    float getVerticalMod() { return map(pos.y + displace.y, 0, height, 1, 0); }
 
     // check collision with mouse
     boolean updateMouseOver() {
         PVector mousePos = mouseTrail.getPos();
-        return PVector.dist(mousePos, pos) < radius;
+        return PVector.dist(mousePos, PVector.add(pos, displace)) < radius;
     }
 
     // get click event and activate consequently
