@@ -1,25 +1,28 @@
 // global variables
 boolean isReady, allowAnimate;
+boolean allowMSP;
 
 // objects
 SystemManager manager;
 MouseTrail mouseTrail;
 
 // global assets
-PFont ttnorms;
+PFont normsThin, normsLight;
 
 void setup() {
     size(1280, 720, P2D);
     noCursor();
+    allowMSP = true;
 
     // initialize graphics
-    isReady = false;
+    isReady = !allowMSP;
     allowAnimate = true;
     loadingScreen();
+    noLoop();
 
     // initialize global assets
-    ttnorms = createFont("TTNorms-Thin.otf", 72);
-    textFont(ttnorms);
+    normsThin = createFont("fonts/TTNorms-Thin.otf", 72);
+    normsLight = createFont("fonts/TTNorms-Light.otf", 48);
 
     // initialize OSC bridge
     initOSC();
@@ -29,7 +32,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    initMaxEvents();
+    if (allowMSP) initMaxEvents();
 }
 
 void draw() {
@@ -61,12 +64,13 @@ void loadingScreen() {
 }
 
 void keyPressed() {
-    if (manager.isTransitioning()) return;
-
-    // trigger transitions from here
+    // trigger transitions from here (uncomment on publish)
     if (key == 'c') changePhaseAll(PHASE_VAPOR);
     if (key == 'v') changePhaseAll(PHASE_WATER);
     if (key == 'b') changePhaseAll(PHASE_ICE);
+
+    // start program (for video documentation purposes)
+    if (key == ENTER) loop();
 }
 
 void drawGUI() {

@@ -1,3 +1,5 @@
+int currentPhase = 0;
+
 // setup Max/MSP hooks and ping receiving UDP server
 void initMaxEvents() {
     // event hooks
@@ -14,12 +16,17 @@ void appReady() {
     isReady = true;
 }
 
-// change phase of application
+// force phase change to argument
 void changePhaseAll(int newPhase) {
     manager.setPhase(newPhase);
     mouseTrail.setPhase(newPhase);
 
     sendOSC("/evt/change_phase", newPhase);
+}
+// goto next phase
+void triggerNextPhase() {
+    currentPhase++;
+    changePhaseAll(currentPhase);
 }
 
 // mouse events

@@ -46,7 +46,7 @@ class MouseTrail {
         // generate corresponding particle type
         switch (phase) {
             case PHASE_VAPOR: createVaporParticle(); break;
-            case PHASE_WATER: createWaterParticle(); break;
+            // case PHASE_WATER: createWaterParticle(); break;
             case PHASE_ICE:   createIceParticle();   break;
         }
 

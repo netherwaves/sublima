@@ -2,7 +2,7 @@
 	"name" : "sublima-maxmsp",
 	"version" : 1,
 	"creationdate" : 3668971933,
-	"modificationdate" : 3670170205,
+	"modificationdate" : 3670431037,
 	"viewrect" : [ 25.0, 73.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -41,12 +41,12 @@
 				"local" : 1
 			}
 ,
-			"water_trail~.maxpat" : 			{
+			"autopan.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
 ,
-			"autopan.maxpat" : 			{
+			"water_trail~.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -71,7 +71,17 @@
 				"local" : 1
 			}
 ,
+			"ice_block~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"vaporsys.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"vapor_hover~.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -81,7 +91,12 @@
 				"local" : 1
 			}
 ,
-			"vapor_hover~.maxpat" : 			{
+			"ice_track~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"veleaser.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -90,6 +105,41 @@
 ,
 		"media" : 		{
 			"water_stream.aif" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"droplet_1.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"droplet_2.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"droplet_3.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"chilly_wind.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"click1.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"click2.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"click3.wav" : 			{
 				"kind" : "audiofile",
 				"local" : 1
 			}

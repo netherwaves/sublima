@@ -164,8 +164,8 @@ class IceParticle extends Particle {
         noiseIndex = random(30);
         flicker = new PVector(0, 0);
 
-        // send OSC message
-        // order: size - theta - color difference - lifespan
+        // send size value to Max/MSP
+        sendOSC("/mousetrail/ice/particle", formatFloat(map(size, 5, 50, 0, 1), 5));
     }
 
     void update(PVector mousePos) {

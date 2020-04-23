@@ -4,13 +4,15 @@ class RenderLayer {
 
     // constructor
     RenderLayer(float _fbCoeff) {
-        main = createGraphics(width, height);
-        sub = createGraphics(width, height);
+        main = createGraphics(width, height, P2D);
+        sub = createGraphics(width, height, P2D);
         fbCoeff = _fbCoeff;
         opacity = 1;
 
         // IMPORTANT:
-        // this is so that the sub layer already has pixel data when transferred to from main layer
+        // this is so that both layers already has pixel data when transferred to from main layer
+        main.beginDraw();
+        main.endDraw();
         sub.beginDraw();
         sub.endDraw();
     }
@@ -18,13 +20,15 @@ class RenderLayer {
     // PGraphics begin/endDraw overrides
     void beginDraw() {
         main.beginDraw();
-        main.clear();
+        if (fbCoeff < 1) main.clear();
         main.noStroke();
 
         // draw sub layer immediately
-        main.tint(255, 255 * fbCoeff);
-        main.image(sub, 0, 0);
-        main.tint(255, 255);
+        if (fbCoeff > 0 && fbCoeff < 1) {
+            main.tint(255, 255 * fbCoeff);
+            main.image(sub, 0, 0);
+            main.tint(255, 255);
+        }
     }
     void endDraw() {
         main.endDraw();
@@ -34,7 +38,7 @@ class RenderLayer {
     void render() {
         image(main, 0, 0);
         // buffer current main to previous sub
-        sub = copyGraphics();
+        if (fbCoeff > 0 && fbCoeff < 1) sub = copyGraphics();
     }
 
     // copy PGraphics object by value from main to sub
