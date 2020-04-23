@@ -20,11 +20,11 @@ class RenderLayer {
     // PGraphics begin/endDraw overrides
     void beginDraw() {
         main.beginDraw();
-        main.clear();
+        if (fbCoeff < 1) main.clear();
         main.noStroke();
 
         // draw sub layer immediately
-        if (fbCoeff > 0) {
+        if (fbCoeff > 0 && fbCoeff < 1) {
             main.tint(255, 255 * fbCoeff);
             main.image(sub, 0, 0);
             main.tint(255, 255);
@@ -38,7 +38,7 @@ class RenderLayer {
     void render() {
         image(main, 0, 0);
         // buffer current main to previous sub
-        if (fbCoeff > 0) sub = copyGraphics();
+        if (fbCoeff > 0 && fbCoeff < 1) sub = copyGraphics();
     }
 
     // copy PGraphics object by value from main to sub
