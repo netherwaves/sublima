@@ -5,33 +5,34 @@ class WaterSystem extends System {
     private String[][] oscOut;
     private boolean isPhaseDone;
     // objects
-    private ArrayList<WaterSpin> spins;
+    private WaterSpin[] spins;
 
     // constructor
     WaterSystem() {
         super("/watersys", 0.95, "activate the streams");
 
-        spins = new ArrayList<WaterSpin>();
-        for (int i = 0; i < NUM_SPINS; i++) {
-            spins.add(new WaterSpin(i));
+        spins = new WaterSpin[NUM_SPINS];
+        for (int i = 0; i < spins.length; i++) {
+            spins[i] = new WaterSpin(i);
         }
         isPhaseDone = false;
-        // -- OUTGOING WATERSPIN PARAMETERS --
+
+        // -- OUTGOING WATERSPIN PARAMS --
         // [0] circle orbit angle (in radians)
         // [1] X position (in px)
         // [2] Y position (in px)
         // [3] 1 if mouse over center sphere; 0 otherwise
         // [4] 1 if spin is activated; 0 otherwise
-        oscOut = new String[5][spins.size()];
+        oscOut = new String[5][spins.length];
     }
 
     void animate() {
         // update animation variables & OSC messages
         isPhaseDone = true;
         WaterSpin ws;
-        for (int i = 0; i < spins.size(); i++) {
+        for (int i = 0; i < spins.length; i++) {
             // update
-            ws = spins.get(i);
+            ws = spins[i];
             ws.animate();
 
             // if there are still non-activated spins, prevent next phase trigger
@@ -55,12 +56,12 @@ class WaterSystem extends System {
 
         // draw all spins
         WaterSpin ws;
-        for (int i = 0; i < spins.size(); i++) {
-            spins.get(i).display(rl.getGraphics());
+        for (int i = 0; i < spins.length; i++) {
+            spins[i].display(rl.getGraphics());
         }
 
         // send OSC messages
-        if (allowAnimate) {
+        if (allowMSP) {
             sendOSC(oscAddr + "/spin/angles", String.join(" ", oscOut[0]));
             sendOSC(oscAddr + "/spin/pans", String.join(" ", oscOut[1]));
             sendOSC(oscAddr + "/spin/mods", String.join(" ", oscOut[2]));
@@ -73,8 +74,8 @@ class WaterSystem extends System {
     }
 
     void click() {
-        for (int i = 0; i < spins.size(); i++) {
-            spins.get(i).click();
+        for (int i = 0; i < spins.length; i++) {
+            spins[i].click();
         }
     }
 }
@@ -134,13 +135,6 @@ class WaterSpin {
         // theta = map(frameCount, 0, 60, 0, PI * speed) % TWO_PI;
     }
 
-    // mod point getters
-    float getTheta() { return theta; }
-    float getPan() { return map(pos.x + displace.x, 0, width, -1, 1); }
-    float getVerticalMod() { return map(pos.y + displace.y, 0, height, 1, 0); }
-    int getMouseOver() { return isMouseOver ? 1 : 0; }
-    int getActivated() { return isActivated ? 1 : 0; }
-
     // check collision with mouse
     boolean updateMouseOver() {
         PVector mousePos = mouseTrail.getPos();
@@ -151,4 +145,11 @@ class WaterSpin {
     void click() {
         if (isMouseOver) isActivated = true;
     }
+
+    // mod point getters
+    float getTheta() { return theta; }
+    float getPan() { return map(pos.x + displace.x, 0, width, -1, 1); }
+    float getVerticalMod() { return map(pos.y + displace.y, 0, height, 1, 0); }
+    int getMouseOver() { return isMouseOver ? 1 : 0; }
+    int getActivated() { return isActivated ? 1 : 0; }
 }

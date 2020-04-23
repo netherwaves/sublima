@@ -1,5 +1,6 @@
 // global variables
 boolean isReady, allowAnimate;
+boolean allowMSP;
 
 // objects
 SystemManager manager;
@@ -11,9 +12,10 @@ PFont normsThin, normsLight;
 void setup() {
     size(1280, 720, P2D);
     noCursor();
+    allowMSP = true;
 
     // initialize graphics
-    isReady = true;
+    isReady = !allowMSP;
     allowAnimate = true;
     loadingScreen();
     noLoop();
@@ -30,7 +32,7 @@ void setup() {
     mouseTrail = new MouseTrail();
 
     // DON'T FORGET TO DECOMMENT THIS!
-    // initMaxEvents();
+    if (allowMSP) initMaxEvents();
 }
 
 void draw() {
@@ -62,12 +64,12 @@ void loadingScreen() {
 }
 
 void keyPressed() {
-    // if (manager.isTransitioning()) return;
+    // trigger transitions from here (uncomment on publish)
+    if (key == 'c') changePhaseAll(PHASE_VAPOR);
+    if (key == 'v') changePhaseAll(PHASE_WATER);
+    if (key == 'b') changePhaseAll(PHASE_ICE);
 
-    // trigger transitions from here
-    // if (key == 'c') changePhaseAll(PHASE_VAPOR);
-    // if (key == 'v') changePhaseAll(PHASE_WATER);
-    // if (key == 'b') changePhaseAll(PHASE_ICE);
+    // start program (for video documentation purposes)
     if (key == ENTER) loop();
 }
 

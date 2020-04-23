@@ -10,7 +10,7 @@ class VaporSystem extends System {
         haloShader = loadShader("shaders/vapor_halo.glsl");
         haloDisplace = new PVector(0, 0);
         haloIntensity = 0;
-        maxIntensity = 60;
+        maxIntensity = 40;
         haloRadius = width*0.1;
 
         // do this only once
