@@ -5,9 +5,14 @@
 
 ## Mode d'utilisation
 1. Ouvrir le projet Max/MSP à l'adresse `sublima-maxmsp/sublima-maxmsp.maxproj`;
-2. Exécuter l'application Processing correspondante dans le dossier `export`;
-   1. L'application est présentement disponible sur Windows 64-bit et Mac OS X.
-3. Suivre les instructions à l'écran (présentement absentes, mais bon).
+2. Exécuter le script Processing situé dans le dossier `sublima-p5`;
 
-## Instructions relatives à v0.1_beta
-Pour changer manuellement de phase, appuyer sur les touches C, V ou B du clavier. J'espère pouvoir intégrer un changement automatique de phase en fonction de la densité d'action de l'utilisateur, si le temps et les ressources me le permettent.
+Si vous voulez tester l'application Processing sans Max/MSP, changez l'instruction à la ligne 15 de `sublima.pde` pour:
+```
+   allowMSP = false;
+```
+
+## Phases
+- Pour sortir de la **phase gazeuse**, bougez la souris autour de l'écran. Un halo devrait apparaître en arrière-plan.
+- Pour sortir de la **phase liquide**, cliquez sur toutes les orbes flottant sur l'écran.
+- Il est présentement impossible de sortir de la **phase solide**.

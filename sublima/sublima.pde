@@ -1,5 +1,5 @@
 // global variables
-boolean isReady, allowAnimate;
+boolean isReady;
 boolean allowMSP;
 
 // objects
@@ -16,7 +16,6 @@ void setup() {
 
     // initialize graphics
     isReady = !allowMSP;
-    allowAnimate = true;
     loadingScreen();
     noLoop();
 
@@ -65,9 +64,9 @@ void loadingScreen() {
 
 void keyPressed() {
     // trigger transitions from here (uncomment on publish)
-    if (key == 'c') changePhaseAll(PHASE_VAPOR);
-    if (key == 'v') changePhaseAll(PHASE_WATER);
-    if (key == 'b') changePhaseAll(PHASE_ICE);
+    // if (key == 'c') changePhaseAll(PHASE_VAPOR);
+    // if (key == 'v') changePhaseAll(PHASE_WATER);
+    // if (key == 'b') changePhaseAll(PHASE_ICE);
 
     // start program (for video documentation purposes)
     if (key == ENTER) loop();
