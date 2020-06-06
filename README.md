@@ -1,18 +1,20 @@
 # SUBLIMA
 
-### **Sublima est un tableau interactif portant sur les changements d'états de l'eau.**
-> Divisé en trois phases (l'eau liquide, la vapeur et la glace), ce projet combine l'interaction de l'utilisateur via clavier et souris à des visuels et une trame sonore à la fois rétroactifs et génératifs.
+### **Sublima is an interactive landscape on the water state change cycle.**
+> Split into three phases (gaseous, liquid and solid), this project combines user interaction through mouse and keyboard with retroactive and generative visuals & sound design.
 
-## Mode d'utilisation
-1. Ouvrir le projet Max/MSP à l'adresse `sublima-maxmsp/sublima-maxmsp.maxproj`;
-2. Exécuter le script Processing situé dans le dossier `sublima-p5`;
+[Here is a live demonstration of an early beta version of the application.](https://youtu.be/yWsP7_3X1Z8)
 
-Si vous voulez tester l'application Processing sans Max/MSP, changez l'instruction à la ligne 15 de `sublima.pde` pour:
+## Running the application locally
+1. Open the Max/MSP project located in the subfolder `sublima-maxmsp/`;
+2. Execute the Processing script located in the subfolder `sublima-p5/`.
+
+If you want to test the Processing sketch without Max/MSP, change the instruction at line 15 of `sublima.pde` to:
 ```
-   allowMSP = false;
+   allowMSP = false
 ```
 
 ## Phases
-- Pour sortir de la **phase gazeuse**, bougez la souris autour de l'écran. Un halo devrait apparaître en arrière-plan.
-- Pour sortir de la **phase liquide**, cliquez sur toutes les orbes flottant sur l'écran.
-- Il est présentement impossible de sortir de la **phase solide**.
+- To complete the **gaseous phase**, move the mouse around the screen. A halo should appear in the background.
+- To complete the **liquid phase**, click on all orbs floating around the screen.
+- In the current state of the application, there is no follow-up to the **solid phase**.
