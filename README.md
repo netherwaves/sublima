@@ -18,3 +18,6 @@ If you want to test the Processing sketch without Max/MSP, change the instructio
 - To complete the **gaseous phase**, move the mouse around the screen. A halo should appear in the background.
 - To complete the **liquid phase**, click on all orbs floating around the screen.
 - In the current state of the application, there is no follow-up to the **solid phase**.
+
+## About fonts
+This project uses TT Norms Light and Thin for text elements. Since I do not have the license for these fonts, I cannot include them in this repository; you will need to provide your own properly licensed font files in order to ensure accurate text display on the Processing end of things.
