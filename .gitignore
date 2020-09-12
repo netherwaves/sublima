@@ -1,5 +1,13 @@
+# gitkeep
+!*/.gitkeep
+
+# folders
 /sublima/out
+/sublima/data/fonts/*
 /export
+
+# files
 *.pkf
 *.wav
-*.otf
+
+
